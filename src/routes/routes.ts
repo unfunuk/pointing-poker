@@ -6,28 +6,28 @@ import Settings from "../pages/Settings";
 export interface RouteSchema {
   key: string;
   path: string;
-  component: React.FunctionComponent
+  component: React.FunctionComponent;
 }
-const ROUTES: RouteSchema[]=[
+const ROUTES: RouteSchema[] = [
   {
-    path:'/',
-    key:'main',
-    component:Main
+    path: "/",
+    key: "main",
+    component: Main,
   },
   {
-    path:'/settings',
-    key:'settings',
-    component:Settings
+    path: "/settings",
+    key: "settings",
+    component: Settings,
   },
   {
-    path:'/game',
-    key:'game',
-    component:Game
+    path: "/game",
+    key: "game",
+    component: Game,
   },
   {
-    path:'/lobby',
-    key:'lobby',
-    component:Lobby
-  }
-]
+    path: "/lobby",
+    key: "lobby",
+    component: Lobby,
+  },
+];
 export default ROUTES;

@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-function Settings() {
+function Settings(): JSX.Element {
   return <div className="settings">Settings</div>;
 }
 

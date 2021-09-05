@@ -1,8 +1,8 @@
-import { Route, Switch } from 'react-router';
-import './App.css';
-import ROUTES from './routes/routes';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import ROUTES from "./routes/routes";
 
-function App() {
+function App(): JSX.Element {
   return (
     <div>
       <Switch>
@@ -11,7 +11,8 @@ function App() {
             key={route.key}
             exact
             path={route.path}
-            component={route.component}></Route>
+            component={route.component}
+          ></Route>
         ))}
       </Switch>
     </div>

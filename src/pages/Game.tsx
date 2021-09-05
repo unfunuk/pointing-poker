@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-function Game() {
+function Game(): JSX.Element {
   return <div className="game">Game</div>;
 }
 
