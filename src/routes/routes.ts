@@ -1,14 +1,10 @@
+import { Route } from "../types/types";
 import Game from "../pages/Game";
 import Lobby from "../pages/Lobby";
 import Main from "../pages/Main";
 import Settings from "../pages/Settings";
 
-export interface RouteSchema {
-  key: string;
-  path: string;
-  component: React.FunctionComponent;
-}
-const ROUTES: RouteSchema[] = [
+const ROUTES: Route[] = [
   {
     path: "/",
     key: "main",

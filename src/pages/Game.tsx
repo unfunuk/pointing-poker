@@ -1,7 +1,7 @@
 import React from "react";
 
 function Game(): JSX.Element {
-  return <div className="game">Game</div>;
+  return <div>Game</div>;
 }
 
 export default Game;
