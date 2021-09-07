@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import ROUTES from "./constants";
 
-function Router(): JSX.Element {
+function Routes(): JSX.Element {
   return (
     <Switch>
       {ROUTES.map(({ key, path, component }) => (
@@ -12,4 +12,4 @@ function Router(): JSX.Element {
   );
 }
 
-export default Router;
+export default Routes;
