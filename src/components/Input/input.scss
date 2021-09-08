@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 .input__description{
+=======
+.form-url__text{
+>>>>>>> 9ac4e8b (feat:add styles fot form-url)
 font-family: Roboto;
 font-style: normal;
 font-weight: 300;
@@ -8,11 +12,28 @@ display: flex;
 align-items: center;
 margin-bottom: 6px;
 }
+<<<<<<< HEAD
 .input{
     display: flex;
     flex-wrap: wrap;
 }
 .input__field{
+=======
+.form-url__text_span{
+    font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+color: #66999B;
+}
+.form-url__div{
+    display: flex;
+    flex-wrap: wrap;
+}
+.form-url__div_input{
+>>>>>>> 9ac4e8b (feat:add styles fot form-url)
   width: 276px;
   height: 47px;
   background: #FFFFFF;
@@ -21,13 +42,38 @@ margin-bottom: 6px;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 0px 10px;
 }
+<<<<<<< HEAD
 
 @media (max-width: 1000px) {
   .input__description{
+=======
+.form-url__div_submit{
+width: 241px;
+  height: 47px;
+  background: #2b3a67;
+  color: #ffffff;
+  border: 1px solid #496a81;
+  border-radius: 3px;
+  font-family: "Ruda", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  display: inline;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .form-url__text{
+>>>>>>> 9ac4e8b (feat:add styles fot form-url)
       font-size: 16px;
       line-height: 18px;
       margin-bottom: 4px;
     }
+<<<<<<< HEAD
     .input__field{
       max-width: 176px;
       max-height: 40px;  
@@ -35,12 +81,49 @@ margin-bottom: 6px;
   }
   @media (max-width: 500px) {
     .input__description{
+=======
+    .form-url__text_span{
+      font-size: 14px;
+      line-height: 18px;
+    }
+    .form-url__div_input{
+      max-width: 176px;
+      max-height: 40px;  
+    }
+    .form-url__div_submit{
+      max-width: 141px;
+      max-height: 40px;
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+  @media (max-width: 500px) {
+    .form-url__text{
+>>>>>>> 9ac4e8b (feat:add styles fot form-url)
         font-size: 12px;
         line-height: 14px;
         margin-bottom: 3px;
       }
+<<<<<<< HEAD
       .input__field{
         max-width: 106px;
         max-height: 25px;  
       }
     }
+=======
+      .form-url__text_span{
+        font-size: 12px;
+        line-height: 14px;
+      }
+      .form-url__div_input{
+        max-width: 106px;
+        max-height: 25px;  
+      }
+      .form-url__div_submit{
+        max-width: 91px;
+        max-height: 25px;
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+>>>>>>> 9ac4e8b (feat:add styles fot form-url)
