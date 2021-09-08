@@ -1,0 +1,43 @@
+.timer {
+  position: relative;
+  min-width: 200px;
+  width: 15vw;
+  height: 80px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 40px;
+  .minutes__label,
+  .seconds__label {
+    position: relative;
+    width: 45%;
+    height: 100%;
+    border-radius: 4px;
+    font-family: "Ruda", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    .minutes__input,
+    .seconds__input,
+    .minutes,
+    .seconds {
+      position: absolute;
+      width: 90%;
+      height: 75%;
+      border: none;
+      color: #000000;
+      font-size: 50px;
+      line-height: 81px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}
