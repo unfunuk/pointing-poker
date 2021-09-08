@@ -6,14 +6,14 @@ function Input(): JSX.Element {
   const [url, setUrl] = useState("");
 
   return (
-    <div>
-      <form className="form-url">
+    <form className="form-url">
+      <p className="form-url__text">
+        Connect to lobby by <span className="form-url__text_span">URL</span>:
+      </p>
+      <div className="form-url__div">
         <label>
-          <p>
-            Connect to lobby by <span>URL</span>:
-          </p>
           <input
-            className="form-url__input"
+            className="form-url__div_input"
             type="text"
             name="input-url"
             value={url}
@@ -22,11 +22,9 @@ function Input(): JSX.Element {
             }}
           />
         </label>
-        <div className="form-url__submit">
-          <input type="submit" value="Connect" />
-        </div>
-      </form>
-    </div>
+        <input type="submit" value="Connect" className="form-url__div_submit" />
+      </div>
+    </form>
   );
 }
 
