@@ -7,12 +7,13 @@ function Input(): JSX.Element {
 
   return (
     <div>
-      <form>
+      <form className="form-url">
         <label>
           <p>
             Connect to lobby by <span>URL</span>:
           </p>
           <input
+            className="form-url__input"
             type="text"
             name="input-url"
             value={url}
@@ -21,7 +22,7 @@ function Input(): JSX.Element {
             }}
           />
         </label>
-        <div className="submit-url">
+        <div className="form-url__submit">
           <input type="submit" value="Connect" />
         </div>
       </form>
