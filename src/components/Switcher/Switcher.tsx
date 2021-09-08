@@ -5,18 +5,18 @@ function Switcher(): JSX.Element {
   const [isActive, setIsActive] = useState(false);
   return (
     <div className="switcher">
-      <label htmlFor="switcher-input" className="switcher-label">
+      <label htmlFor="switcher__input" className="switcher__label">
         Label:
         <input
           checked={isActive}
           type="checkbox"
-          id="switcher-input"
-          className="switcher-input"
+          id="switcher__input"
+          className="switcher__input"
           onChange={() => {
             setIsActive(!isActive);
           }}
         />
-        <span className="switcher-button" />
+        <span className="switcher__button" />
       </label>
     </div>
   );

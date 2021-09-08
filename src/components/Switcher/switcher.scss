@@ -1,7 +1,7 @@
 .switcher {
   width: 12vw;
   height: 40px;
-  .switcher-label {
+  .switcher__label {
     font-family: "Ruda", sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -11,16 +11,16 @@
     align-items: center;
     justify-content: space-between;
     color: #000000;
-    .switcher-input {
+    .switcher__input {
       display: none;
-      &:checked + .switcher-button {
+      &:checked + .switcher__button {
         background-color: #60dabf;
         &:before {
           transform: translateX(47px);
         }
       }
     }
-    .switcher-button {
+    .switcher__button {
       width: 80px;
       height: 40px;
       box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -49,16 +49,16 @@
   .switcher {
     width: 132px;
     height: 30px;
-    .switcher-label {
+    .switcher__label {
       font-size: 24px;
-      .switcher-input {
-        &:checked + .switcher-button {
+      .switcher__input {
+        &:checked + .switcher__button {
           &:before {
             transform: translateX(27px);
           }
         }
       }
-      .switcher-button {
+      .switcher__button {
         width: 55px;
         height: 30px;
         &:before {
