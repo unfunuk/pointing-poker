@@ -16,7 +16,7 @@ function Switcher(): JSX.Element {
           type="checkbox"
           id="switcher-input"
           className="switcher__input"
-          onChange={() => handleToggle()}
+          onChange={handleToggle}
         />
         <span className="switcher__button" />
       </label>
