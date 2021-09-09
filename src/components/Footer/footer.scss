@@ -5,3 +5,15 @@
     bottom: 0;
     background-color: #2B3A67;
 }
+
+@media (max-width: 1000px) {
+    .footer{
+      height: 50px;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer{
+      height: 30px;
+    }
+}
