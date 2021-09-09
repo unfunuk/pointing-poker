@@ -6,7 +6,7 @@ function Header(): JSX.Element {
     <header className="header">
       <div className="header__top"></div>
       <div className="header__bottom"></div>
-      <img className="header__logo" src="favicon.ico" alt="logo" />
+      <img className="header__logo" src="logo.ico" alt="logo" />
     </header>
   );
 }
