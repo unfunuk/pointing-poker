@@ -3,18 +3,20 @@ import "./switcher.scss";
 
 function Switcher(): JSX.Element {
   const [isActive, setIsActive] = useState(false);
+  const handleToggle = () => {
+    setIsActive(!isActive);
+  };
+
   return (
     <div className="switcher">
-      <label htmlFor="switcher__input" className="switcher__label">
+      <label htmlFor="switcher-input" className="switcher__label">
         Label:
         <input
           checked={isActive}
           type="checkbox"
-          id="switcher__input"
+          id="switcher-input"
           className="switcher__input"
-          onChange={() => {
-            setIsActive(!isActive);
-          }}
+          onChange={() => handleToggle()}
         />
         <span className="switcher__button" />
       </label>
