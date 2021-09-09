@@ -3,35 +3,34 @@ import "./timer.scss";
 import { Mode } from "./constants";
 import { TimerProps } from "./types";
 
-function Timer({ mode, time }: TimerProps): JSX.Element {
-  const [minutesValue, setMinutesValue] = useState<string>(
-    mode === Mode.GameMode && time ? `${Math.trunc(time / 60)}` : "00"
-  );
-  const [secondsValue, setSecondsValue] = useState<string>(
-    mode === Mode.GameMode && time ? `${time % 60}` : "00"
-  );
+function Timer({
+  mode,
+  configuration = { minutes: "00", seconds: "00" },
+}: TimerProps): JSX.Element {
+  const [minutes, setMinutes] = useState<string>(configuration.minutes);
+  const [seconds, setSeconds] = useState<string>(configuration.seconds);
   const handleMinutes = (text: string) => {
     if (text === "" || text === "0") {
-      setMinutesValue(`00`);
+      setMinutes(`00`);
     } else {
       if (Number(text) > 0 && Number(text) < 60) {
         if (Number(text) < 10 && Number(text) > 0) {
-          setMinutesValue(`0${Number(text)}`);
+          setMinutes(`0${Number(text)}`);
         } else {
-          setMinutesValue(`${Number(text)}`);
+          setMinutes(`${Number(text)}`);
         }
       }
     }
   };
   const handleSeconds = (text: string) => {
     if (text === "" || text === "0") {
-      setSecondsValue(`00`);
+      setSeconds(`00`);
     } else {
       if (Number(text) >= 0 && Number(text) < 60) {
         if (Number(text) < 10 && Number(text) > 0) {
-          setSecondsValue(`0${Number(text)}`);
+          setSeconds(`0${Number(text)}`);
         } else {
-          setSecondsValue(`${Number(text)}`);
+          setSeconds(`${Number(text)}`);
         }
       }
     }
@@ -40,14 +39,14 @@ function Timer({ mode, time }: TimerProps): JSX.Element {
     <div className="timer">
       <label htmlFor="minutes__input" className="minutes__label">
         Minutes
-        {mode === Mode.GameMode ? (
-          <div className="minutes">{minutesValue}</div>
+        {mode === Mode.Game ? (
+          <div className="minutes">{minutes}</div>
         ) : (
           <input
             type="text"
             id="minutes__input"
             className="minutes__input"
-            value={minutesValue}
+            value={minutes}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
               handleMinutes(e.target.value)
             }
@@ -57,14 +56,14 @@ function Timer({ mode, time }: TimerProps): JSX.Element {
       :
       <label htmlFor="seconds__input" className="seconds__label">
         Seconds
-        {mode === Mode.GameMode ? (
-          <div className="seconds">{secondsValue}</div>
+        {mode === Mode.Game ? (
+          <div className="seconds">{seconds}</div>
         ) : (
           <input
             type="text"
             id="seconds__input"
             className="seconds__input"
-            value={secondsValue}
+            value={seconds}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
               handleSeconds(e.target.value)
             }

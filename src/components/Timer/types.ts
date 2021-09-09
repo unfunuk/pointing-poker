@@ -2,5 +2,5 @@ import { Mode } from "./constants";
 
 export interface TimerProps {
   mode: Mode;
-  time?: number;
+  configuration?: { minutes: string; seconds: string };
 }
