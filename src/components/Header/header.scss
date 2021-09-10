@@ -1,0 +1,21 @@
+.header {
+  position: sticky;
+  .header__top {
+    width: 100vw;
+    height: 50px;
+    background: #2b3a67;
+  }
+  .header__bottom {
+    width: 100vw;
+    height: 20px;
+    background: #66999b;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .header__logo {
+    position: absolute;
+    width: 70.71px;
+    height: 70.71px;
+    left: 64px;
+    top: 15px;
+  }
+}

@@ -1,4 +1,6 @@
+import { Buttons } from "./constants";
+
 export interface ButtonProps {
-  type: string;
+  type: Buttons;
   text: string;
 }
