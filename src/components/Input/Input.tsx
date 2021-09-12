@@ -1,25 +1,29 @@
 import React, { useState } from "react";
 
 import "./input.scss";
+import { InputProps } from "./types";
 
-function Input(): JSX.Element {
+function Input({ Button, text, setUpperValue }: InputProps): JSX.Element {
   const [value, setValue] = useState("");
+
+  const setValues = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+    setUpperValue(event.target.value); // поднимает значение вверх
+  };
 
   return (
     <div className="input">
       <label>
-        <p className="input__description">Label:</p>
+        {text ? <p className="input__description">{text}</p> : null}
         <input
           className="input__field"
           type="text"
           name="input"
           value={value}
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-            setValue(event.target.value);
-          }}
+          onChange={setValues}
         />
       </label>
-      {/* TO DO: add Button component after its merge */}
+      {Button ? Button : null}
     </div>
   );
 }
