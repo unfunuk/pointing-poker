@@ -11,7 +11,7 @@ function Switcher({ label }: SwitcherProps): JSX.Element {
   return (
     <div className="switcher">
       <label htmlFor="switcher-input" className="switcher__label">
-        <span className="switcher__paragraph">{label}</span>
+        <span className="switcher__labelText">{label}</span>
         <input
           checked={isActive}
           type="checkbox"
