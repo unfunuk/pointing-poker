@@ -59,3 +59,48 @@ right: 0%;
 top: 0%;
 bottom: 0%;
 }
+
+@media (max-width: 1000px) {
+    .card{
+
+        border-radius: 47px;
+        width: 198px;
+        height: 276px;
+    }
+    .card__top{
+
+    font-size: 44px;
+    line-height: 51px;
+    }
+    .card__bottom{
+        font-size: 44px;
+        line-height: 51px;
+    }
+    .card__content{
+    font-size: 94px;
+    line-height: 102px;
+
+    }
+  }
+  @media (max-width: 500px) {
+    .card{
+        border: 2px solid #EEEEEE;
+        border-radius: 27px;
+        width: 108px;
+        height: 136px;
+    }
+    .card__top{
+
+    font-size: 24px;
+    line-height: 25px;
+    }
+    .card__bottom{
+        font-size: 24px;
+        line-height: 25px;
+    }
+    .card__content{
+    font-size: 50px;
+    line-height: 80px;
+
+    }
+  }

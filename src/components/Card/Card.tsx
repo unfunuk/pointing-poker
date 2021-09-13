@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./card.scss";
 import { CardValue } from "./types";
 
