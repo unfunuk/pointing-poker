@@ -3,24 +3,26 @@ import React, { useState } from "react";
 import "./input.scss";
 import { InputProps } from "./types";
 
-function Input({ Button, text, setUpperValue }: InputProps): JSX.Element {
+function Input({ Button, label, setUpperValue }: InputProps): JSX.Element {
   const [value, setValue] = useState("");
 
-  const setValues = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
-    setUpperValue(event.target.value); // поднимает значение вверх
+    if(setUpperValue){
+      setUpperValue(event.target.value);
+    } 
   };
 
   return (
     <div className="input">
       <label>
-        {text ? <p className="input__description">{text}</p> : null}
+        {label ? <p className="input__description">{label}</p> : null}
         <input
           className="input__field"
           type="text"
           name="input"
           value={value}
-          onChange={setValues}
+          onChange={onChange}
         />
       </label>
       {Button ? Button : null}
