@@ -9,3 +9,7 @@ export interface Configuration {
   minutes: string;
   seconds: string;
 }
+
+export interface GameTimerProps {
+  configuration: Configuration;
+}

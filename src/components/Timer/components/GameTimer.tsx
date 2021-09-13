@@ -1,15 +1,19 @@
 import React from "react";
-import { Configuration } from "../types";
+import { GameTimerProps } from "../types";
 
 const GameTimer = ({
   configuration: { minutes, seconds },
-}: {
-  configuration: Configuration;
-}): JSX.Element => {
+}: GameTimerProps): JSX.Element => {
   return (
     <>
-      <div className="minutes">{minutes}</div>
-      <div className="seconds">{seconds}</div>
+      <label className="minutes__label">
+        Minutes
+        <div className="minutes">{minutes}</div>
+      </label>
+      <label className="seconds__label">
+        Seconds
+        <div className="seconds">{seconds}</div>
+      </label>
     </>
   );
 };

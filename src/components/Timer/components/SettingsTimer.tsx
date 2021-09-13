@@ -3,7 +3,7 @@ const SettingsTimer = (): JSX.Element => {
   const [minutes, setMinutes] = useState<string>("00");
   const [seconds, setSeconds] = useState<string>("00");
 
-  const handleMinutes = ({
+  const handleMinutesChange = ({
     target: { value },
   }: ChangeEvent<HTMLInputElement>) => {
     if (Number(value) >= 0 && Number(value) < 60) {
@@ -11,7 +11,7 @@ const SettingsTimer = (): JSX.Element => {
     }
   };
 
-  const handleSeconds = ({
+  const handleSecondsChange = ({
     target: { value },
   }: ChangeEvent<HTMLInputElement>) => {
     if (Number(value) >= 0 && Number(value) < 60) {
@@ -40,7 +40,7 @@ const SettingsTimer = (): JSX.Element => {
           id="minutes__input"
           className="minutes__input"
           value={minutes}
-          onChange={handleMinutes}
+          onChange={handleMinutesChange}
           onBlur={handleMinutesBlur}
         />
       </label>
@@ -51,7 +51,7 @@ const SettingsTimer = (): JSX.Element => {
           id="seconds__input"
           className="seconds__input"
           value={seconds}
-          onChange={handleSeconds}
+          onChange={handleSecondsChange}
           onBlur={handleSecondsBlur}
         />
       </label>
