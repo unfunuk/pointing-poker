@@ -1,23 +1,18 @@
-import React, { ChangeEvent, useState } from "react";
-const SettingsTimer = (): JSX.Element => {
-  const [minutes, setMinutes] = useState<string>("00");
-  const [seconds, setSeconds] = useState<string>("00");
+import React, { useState } from "react";
+import { DEFAULT_TIMER_VALUE } from "../constants";
+function SettingsTimer(): JSX.Element {
+  const [minutes, setMinutes] = useState<string>(DEFAULT_TIMER_VALUE);
+  const [seconds, setSeconds] = useState<string>(DEFAULT_TIMER_VALUE);
 
-  const handleMinutesChange = ({
-    target: { value },
-  }: ChangeEvent<HTMLInputElement>) => {
-    if (Number(value) >= 0 && Number(value) < 60) {
-      setMinutes(value);
-    }
-  };
+  const handleChange =
+    (onChange: React.Dispatch<React.SetStateAction<string>>) =>
+    ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
+      const isValidTimerValue = Number(value) >= 0 && Number(value) < 60;
 
-  const handleSecondsChange = ({
-    target: { value },
-  }: ChangeEvent<HTMLInputElement>) => {
-    if (Number(value) >= 0 && Number(value) < 60) {
-      setSeconds(value);
-    }
-  };
+      if (isValidTimerValue) {
+        onChange(value);
+      }
+    };
 
   const handleMinutesBlur = () => {
     if (minutes === "") {
@@ -40,7 +35,7 @@ const SettingsTimer = (): JSX.Element => {
           id="minutes__input"
           className="minutes__input"
           value={minutes}
-          onChange={handleMinutesChange}
+          onChange={handleChange(setMinutes)}
           onBlur={handleMinutesBlur}
         />
       </label>
@@ -51,12 +46,12 @@ const SettingsTimer = (): JSX.Element => {
           id="seconds__input"
           className="seconds__input"
           value={seconds}
-          onChange={handleSecondsChange}
+          onChange={handleChange(setSeconds)}
           onBlur={handleSecondsBlur}
         />
       </label>
     </>
   );
-};
+}
 
 export default SettingsTimer;

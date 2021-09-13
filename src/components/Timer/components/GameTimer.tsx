@@ -1,9 +1,9 @@
 import React from "react";
 import { GameTimerProps } from "../types";
 
-const GameTimer = ({
+function GameTimer({
   configuration: { minutes, seconds },
-}: GameTimerProps): JSX.Element => {
+}: GameTimerProps): JSX.Element {
   return (
     <>
       <label className="minutes__label">
@@ -16,5 +16,5 @@ const GameTimer = ({
       </label>
     </>
   );
-};
+}
 export default GameTimer;
