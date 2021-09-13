@@ -1,3 +1,3 @@
 export interface SwitcherProps {
-  value: string;
+  label: string;
 }

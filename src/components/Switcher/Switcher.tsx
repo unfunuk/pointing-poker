@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./switcher.scss";
 import { SwitcherProps } from "./types";
 
-function Switcher({ value }: SwitcherProps): JSX.Element {
+function Switcher({ label }: SwitcherProps): JSX.Element {
   const [isActive, setIsActive] = useState(false);
   const handleToggle = () => {
     setIsActive(!isActive);
@@ -11,7 +11,7 @@ function Switcher({ value }: SwitcherProps): JSX.Element {
   return (
     <div className="switcher">
       <label htmlFor="switcher-input" className="switcher__label">
-        <span className="switcher__span">{value}</span>
+        <span className="switcher__span">{label}</span>
         <input
           checked={isActive}
           type="checkbox"
