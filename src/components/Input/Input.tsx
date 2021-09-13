@@ -8,9 +8,9 @@ function Input({ Button, label, setUpperValue }: InputProps): JSX.Element {
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
-    if(setUpperValue){
+    if (setUpperValue) {
       setUpperValue(event.target.value);
-    } 
+    }
   };
 
   return (
