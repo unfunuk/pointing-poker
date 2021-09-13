@@ -16,13 +16,13 @@ function SettingsTimer(): JSX.Element {
 
   const handleMinutesBlur = () => {
     if (minutes === "") {
-      setMinutes(`00`);
+      setMinutes(DEFAULT_TIMER_VALUE);
     }
   };
 
   const handleSecondsBlur = () => {
     if (seconds === "") {
-      setSeconds(`00`);
+      setSeconds(DEFAULT_TIMER_VALUE);
     }
   };
 
