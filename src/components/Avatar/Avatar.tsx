@@ -7,9 +7,9 @@ function Avatar({ initials, imageSource }: AvatarProps): JSX.Element {
     <div className="avatar">
       {imageSource ? (
         <img className="avatar__image" src={imageSource} alt="avatar" />
-      ) : initials !== "" ? (
+      ) : (
         initials
-      ) : null}
+      )}
     </div>
   );
 }
