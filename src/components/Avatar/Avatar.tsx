@@ -2,18 +2,13 @@ import React from "react";
 import "./avatar.scss";
 import { AvatarProps } from "./types";
 
-function Avatar({ initials, imgUrl }: AvatarProps): JSX.Element {
+function Avatar({ initials, imageSource }: AvatarProps): JSX.Element {
   return (
     <div className="avatar">
-      {imgUrl ? (
-        <img className="avatar__img" src={imgUrl} alt="avatar" />
+      {imageSource ? (
+        <img className="avatar__image" src={imageSource} alt="avatar" />
       ) : (
-        <>
-          {initials.firstName !== ""
-            ? initials.firstName[0].toUpperCase()
-            : null}
-          {initials.lastName !== "" ? initials.lastName[0].toUpperCase() : null}
-        </>
+        <>{initials !== "" ? initials.toUpperCase() : null}</>
       )}
     </div>
   );
