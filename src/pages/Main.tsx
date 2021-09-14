@@ -1,7 +1,12 @@
 import React from "react";
+import PopUp from "../components/Pop-up/Pop-up";
 
 function Main(): JSX.Element {
-  return <div>Main</div>;
+  return (
+    <div>
+      <PopUp />
+    </div>
+  );
 }
 
 export default Main;
