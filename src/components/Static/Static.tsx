@@ -12,9 +12,11 @@ function Static(): JSX.Element {
         <span>
           <img src="cards.jpg" />
         </span>
-        <span className="static__title_poker">Poker</span>
-        <span className="static__title_slash"></span>
-        <span className="static__title_plannig">Plannig</span>
+        <span className="static__title_text static__title_poker">Poker</span>
+        <p className="static__title_slash"></p>
+        <span className="static__title_text static__title_planning">
+          Plannig
+        </span>
       </div>
       <div className="static__start-geme">
         <p>Start your planning:</p>
