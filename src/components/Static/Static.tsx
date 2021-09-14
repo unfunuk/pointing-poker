@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "../Button/Button";
 import { Buttons } from "../Button/constants";
 import Input from "../Input/Input";
+import "./static.scss";
 
 function Static(): JSX.Element {
   const [url, setUrl] = useState("");

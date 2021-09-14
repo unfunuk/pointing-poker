@@ -25,7 +25,7 @@ function Input({ Button, label, setUpperValue }: InputProps): JSX.Element {
           onChange={onChange}
         />
       </label>
-      {Button ? Button : null}
+      <p className="input__button"> {Button ? Button : null} </p>
     </div>
   );
 }
