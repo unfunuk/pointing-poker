@@ -8,18 +8,21 @@ padding-bottom: 232px;
 padding-left: 26px;
 
 }
+.static__start{
+    width: 44.7%;
+}
 .static__title{
     position: relative;
 }
 .static__title_slash{
     position: absolute;
-    width: 350.3px;
+    width: 35%;
 height: 0px;
 border: 5px solid #FFFFFF;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 transform: rotate(164.77deg);
 left: 161px;
-top: 19px;
+top: 46px;
 }
 .static__title_text{
     position: absolute;
@@ -38,6 +41,32 @@ color: #000000;
     left: 272px;
     top: 64.39px;
 }
+.static_text{
+    text-align: center;
+    font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 48px;
+line-height: 56px;
+
+color: #66999B;
+}
+.static__start_btn{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    //  width: 44.7%;
+}
+.static__start_discription{
+    font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 24px;
+line-height: 28px;
+display: flex;
+align-items: center;
+}
+
 
 @media (max-width: 1000px) {
     .static{
@@ -45,11 +74,42 @@ color: #000000;
     padding-bottom: 202px;
     padding-left: 21px;
     }
+    .static__title_text{
+    font-size: 35px;
+    line-height: 46px;
     }
-    @media (max-width: 500px) {
-        .static{
-        padding-top: 80px;
-        padding-bottom: 150px;
-        padding-left: 15px;
-        }
-      }
+    .static__title_poker{
+        left: 121px;
+    }
+    .static__title_planning{
+        left: 212px;
+        top: 64.39px;
+    }
+    .static_text{
+    font-size: 28px;
+    line-height: 36px;
+
+    }
+    }
+    // @media (max-width: 500px) {
+    //     .static{
+    //     padding-top: 80px;
+    //     padding-bottom: 150px;
+    //     padding-left: 15px;
+    //     }
+    //     .static__title_text{
+    //     font-size: 20px;
+    //     line-height: 26px;
+    //     }
+    //     .static__title_text{
+    //     font-size: 35px;
+    //     line-height: 46px;
+    //     }
+    //     .static__title_poker{
+    //     left: 121px;
+    //     }
+    //     .static__title_planning{
+    //     left: 212px;
+    //     top: 64.39px;
+    //     }
+    //   }

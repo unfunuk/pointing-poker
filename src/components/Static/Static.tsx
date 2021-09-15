@@ -18,12 +18,15 @@ function Static(): JSX.Element {
           Plannig
         </span>
       </div>
-      <div className="static__start-geme">
-        <p>Start your planning:</p>
-        <Button type={Buttons.Primary} text="Start new game" />
+      <div className="static__start">
+        <p className="static_text">Start your planning:</p>
+        <div className="static__start_btn">
+          <p className="static__start_discription">Create session:</p>
+          <Button type={Buttons.Primary} text="Start new game" />
+        </div>
       </div>
-      <div className="static__start-geme">
-        <p>OR:</p>
+      <div className="static__start">
+        <p className="static_text">OR:</p>
         <Input
           label="Connect to lobby by URL:"
           Button={<Button type={Buttons.Primary} text="Connect" />}
