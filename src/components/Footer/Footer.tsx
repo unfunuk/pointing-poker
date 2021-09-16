@@ -6,12 +6,12 @@ function Footer(): JSX.Element {
   return (
     <footer className="footer">
       <div className="footer__githubs">
-        {GITHUBS.map(({ ghlink, name }) => (
-          <a key={name} href={ghlink}>
+        {GITHUBS.map(({ url, id }) => (
+          <a key={id} href={url}>
             <img
               className="footer__github_icon"
               src="github.ico"
-              alt={`github-${name}`}
+              alt="github-picture"
             />
             <span className="footer__github_id">{id}</span>
           </a>
