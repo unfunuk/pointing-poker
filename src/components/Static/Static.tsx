@@ -20,7 +20,7 @@ function Static(): JSX.Element {
       </div>
       <div className="static__start">
         <p className="static_text">Start your planning:</p>
-        <div className="static__start_btn">
+        <div className="static__start_button">
           <p className="static__start_discription">Create session:</p>
           <Button type={Buttons.Primary} text="Start new game" />
         </div>
