@@ -13,7 +13,7 @@ function Footer(): JSX.Element {
               src="github.ico"
               alt={`github-${name}`}
             />
-            <span className="footer__githubs_name">{name}</span>
+            <span className="footer__github_id">{id}</span>
           </a>
         ))}
       </div>
