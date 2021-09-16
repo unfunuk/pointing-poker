@@ -9,7 +9,7 @@ function Footer(): JSX.Element {
         {GITHUBS.map(({ ghlink, name }) => (
           <a key={name} href={ghlink}>
             <img
-              className="footer__githubs_icon"
+              className="footer__github_icon"
               src="github.ico"
               alt={`github-${name}`}
             />
