@@ -1,4 +1,4 @@
 export type GitHubs = {
-  ghlink: string;
-  name: string;
+  url: string;
+  id: string;
 };
