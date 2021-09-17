@@ -1,7 +1,7 @@
 .avatar {
   position: relative;
-  width: 83px;
-  height: 83px;
+  min-width: 83px;
+  min-height: 83px;
   border-radius: 50%;
   border: 1px solid #60dabf;
   font-family: Roboto;
