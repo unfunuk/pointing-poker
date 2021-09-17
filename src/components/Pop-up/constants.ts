@@ -1,5 +1,5 @@
-export const Labels = [
-  "Your first name",
-  "Your last name",
-  "Your job position",
-];
+export enum Labels {
+  FirstName = "Your first name",
+  LastName = "Your last name",
+  JobPosition = "Your job position",
+}

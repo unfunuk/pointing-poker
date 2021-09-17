@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./input.scss";
 import { InputProps } from "./types";
 
-function Input({ Button, label, setUpperValue }: InputProps): JSX.Element {
-  const [value, setValue] = useState("");
-
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-    if (setUpperValue) {
-      setUpperValue(event.target.value);
-    }
+function Input({
+  Button,
+  label,
+  onValueChange,
+  value,
+}: InputProps): JSX.Element {
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    onValueChange(event.target.value);
   };
 
   return (
@@ -22,7 +22,7 @@ function Input({ Button, label, setUpperValue }: InputProps): JSX.Element {
           type="text"
           name="input"
           value={value}
-          onChange={onChange}
+          onChange={handleInput}
         />
       </label>
       {Button ? Button : null}
