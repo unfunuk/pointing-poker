@@ -11,7 +11,7 @@ function Footer(): JSX.Element {
             <img
               className="footer__github_icon"
               src="github.ico"
-              alt="github-picture"
+              alt="Github icon"
             />
             <span className="footer__github_id">{id}</span>
           </a>
