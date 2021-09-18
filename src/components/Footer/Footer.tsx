@@ -22,7 +22,7 @@ function Footer(): JSX.Element {
           <img
             className="footer__rsshool_icon"
             src="rsschool.svg"
-            alt="rsschool.svg"
+            alt="Rolling Scopes school icon"
           />
         </a>
         <span className="footer__rsshool_year">2021</span>
