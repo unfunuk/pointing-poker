@@ -52,6 +52,16 @@ right: 0%;
 top: 0%;
 bottom: 0%;
 }
+.card__content_img{
+position: absolute;
+align-items: center;
+text-align: center;
+left: 35%;
+right: 0%;
+top: 40%;
+bottom: 0%;
+}
+
 @media (max-width: 1000px) {
 .card{
 border-radius: 47px;
@@ -71,7 +81,7 @@ font-size: 94px;
 line-height: 102px;
     }
   }
-
+  
   @media (max-width: 500px) {
 .card{
  border: 2px solid #EEEEEE;
