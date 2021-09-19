@@ -29,8 +29,9 @@ function Main(): JSX.Element {
         <p className="static__section_text">OR:</p>
         <Input
           label="Connect to lobby by URL:"
+          value={url}
           Button={<Button type={Buttons.Primary} text="Connect" />}
-          setUpperValue={setUrl}
+          onValueChange={setUrl}
         />
       </div>
     </div>

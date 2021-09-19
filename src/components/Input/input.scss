@@ -1,61 +1,58 @@
-.input__description{
-font-family: Roboto;
-font-style: normal;
-font-weight: 300;
-font-size: 24px;
-line-height: 28px;
-display: flex;
-align-items: center;
-margin-bottom: 6px;
-
+.input__description {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
 }
-.input{
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-}
-.input__field{
-  width: 276px;
-  height: 47px;
-  background: #FFFFFF;
-  border: 1px solid #2B3A67;
-  box-sizing: border-box;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 0px 0px 0px 10px;
+.input {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
 }
 .input__button{
   position: absolute;
-bottom: 0;
+  bottom: 0;
 margin-bottom: 0;
 margin-left: 276px;
 align-items:flex-end;
 }
+.input__field {
+  outline: none;
+  width: 276px;
+  height: 47px;
+  background: #ffffff;
+  border: 1px solid #2b3a67;
+  box-sizing: border-box;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 0px 10px;
+}
 
 @media (max-width: 1000px) {
-  .input__description{
-      font-size: 16px;
-      line-height: 18px;
-      margin-bottom: 4px;
-    }
-    .input__field{
-      max-width: 176px;
-      max-height: 40px;  
-    }
-    .input__button{
+  .input__description {
+    font-size: 16px;
+    line-height: 18px;
+    margin-bottom: 4px;
+  }
+  .input__field {
+    max-width: 176px;
+    max-height: 40px;
+  }
+  .input__button{
     margin-left: 176px;
     }
+}
+@media (max-width: 500px) {
+  .input__description {
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 3px;
   }
-  @media (max-width: 500px) {
-    .input__description{
-        font-size: 12px;
-        line-height: 14px;
-        margin-bottom: 3px;
-      }
-      .input__field{
-        max-width: 106px;
-        max-height: 25px;  
-      }
-      .input__button{
-        margin-left: 106px;
-        }
-    }
+  .input__field {
+    max-width: 106px;
+    max-height: 25px;
+  }
+}

@@ -1,5 +1,6 @@
 export type InputProps = {
   Button?: JSX.Element;
   label?: string;
-  setUpperValue?: any;
+  onValueChange: React.Dispatch<React.SetStateAction<string>>;
+  value: string;
 };
