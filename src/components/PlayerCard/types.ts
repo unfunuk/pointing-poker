@@ -1,7 +1,7 @@
 export interface PlayerCardProps {
   userData: UserData;
-  isThatYou: boolean;
-  isSmth: boolean;
+  isCurrentPalyer: boolean;
+  shouldShowRemoveButton: boolean;
 }
 interface UserData {
   firstName: string;

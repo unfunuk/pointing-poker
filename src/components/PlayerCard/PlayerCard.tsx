@@ -5,8 +5,8 @@ import { PlayerCardProps } from "./types";
 
 function PlayerCard({
   userData: { firstName, lastName, jobPosition, avatarSource, initials },
-  isThatYou,
-  isSmth,
+  isCurrentPalyer,
+  shouldShowRemoveButton,
 }: PlayerCardProps): JSX.Element {
   return (
     <div className="playerCard">
@@ -16,15 +16,17 @@ function PlayerCard({
         <Avatar initials={initials} />
       )}
       <div className="playerCard__info">
-        {isThatYou && <div className="playerCard__aboutYou">It`s you</div>}
+        {isCurrentPalyer && (
+          <div className="playerCard__aboutYou">It`s you</div>
+        )}
         <div className="playerCard__name">{`${firstName} ${lastName}`}</div>
         <div className="playerCard__jobPosition">{jobPosition}</div>
       </div>
-      {isSmth && (
+      {shouldShowRemoveButton && (
         <img
           className="playerCard__removeImage"
-          alt="removeCard"
-          src="vector.png"
+          alt="Remove card icon"
+          src="removeCardIcon.png"
         />
       )}
     </div>
