@@ -25,7 +25,7 @@ function Input({
           onChange={handleInput}
         />
       </label>
-      {Button ? Button : null}
+      <p className="input__button"> {Button ? Button : null} </p>
     </div>
   );
 }

@@ -11,6 +11,14 @@
 .input {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+}
+.input__button {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+  margin-left: 276px;
+  align-items: flex-end;
 }
 .input__field {
   outline: none;
@@ -32,6 +40,9 @@
   .input__field {
     max-width: 176px;
     max-height: 40px;
+  }
+  .input__button {
+    margin-left: 176px;
   }
 }
 @media (max-width: 500px) {
