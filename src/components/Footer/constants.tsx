@@ -2,19 +2,19 @@ import { GitHubs } from "./types";
 
 export const GITHUBS: GitHubs[] = [
   {
-    ghlink: "https://github.com/gbaykov",
-    name: "GBaykov",
+    url: "https://github.com/gbaykov",
+    id: "GBaykov",
   },
   {
-    ghlink: "https://github.com/vld-m",
-    name: "vld-m",
+    url: "https://github.com/vld-m",
+    id: "vld-m",
   },
   {
-    ghlink: "https://github.com/alina-str",
-    name: "alina-str",
+    url: "https://github.com/alina-str",
+    id: "alina-str",
   },
   {
-    ghlink: "https://github.com/unfunuk",
-    name: "unfunuk",
+    url: "https://github.com/unfunuk",
+    id: "unfunuk",
   },
 ];
