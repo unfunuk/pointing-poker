@@ -1,0 +1,95 @@
+.playerCard {
+  position: relative;
+  width: 500px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  box-sizing: border-box;
+  .playerCard__info {
+    margin: 0 10px;
+    height: 83px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-family: Roboto;
+    font-style: normal;
+    color: #000000;
+    .playerCard__name {
+      font-weight: 300;
+      font-size: 42px;
+      line-height: 48px;
+    }
+    .playerCard__jobPosition {
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 12px;
+    }
+    .playerCard__aboutYou {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 16px;
+    }
+  }
+  .playerCard__removeImage {
+    min-width: 48px;
+    min-height: 48px;
+  }
+}
+@media (max-width: 1000px) {
+  .playerCard {
+    width: 350px;
+    height: 90px;
+    padding: 0 15px;
+    .playerCard__info {
+      margin: 0 7px;
+      height: 60px;
+      .playerCard__name {
+        font-size: 34px;
+        line-height: 30px;
+      }
+      .playerCard__jobPosition {
+        font-size: 12px;
+      }
+      .playerCard__aboutYou {
+        font-size: 12px;
+      }
+    }
+    .playerCard__removeImage {
+      min-width: 40px;
+      min-height: 40px;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .playerCard {
+    width: 300px;
+    height: 70px;
+    padding: 0 10px;
+    .playerCard__info {
+      height: 45px;
+      .playerCard__name {
+        font-size: 24px;
+        line-height: 30px;
+      }
+      .playerCard__jobPosition {
+        font-size: 10px;
+      }
+      .playerCard__aboutYou {
+        font-size: 10px;
+        line-height: 12px;
+      }
+    }
+    .playerCard__removeImage {
+      min-width: 34px;
+      min-height: 34px;
+    }
+  }
+}
