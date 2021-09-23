@@ -8,21 +8,25 @@ interface VotesInt {
 function Votes({ score, players }: VotesInt): JSX.Element {
   return (
     <div className="votes">
-      <div className="votes__header">
-        <span>Score: </span>
-        <span>Players: </span>
+      <div className="votes__score">
+        <span className="votes__head-text">Score: </span>
+        {score.map((value) => {
+          return (
+            <p className="votes__card" key="1">
+              {value}
+            </p>
+          );
+        })}
       </div>
-      <div className="votes__body">
-        <div>
-          {score.map((value) => {
-            return <p key="1">{value}</p>;
-          })}
-        </div>
-        <div>
-          {players.map((player) => {
-            return <div key="2">{player}</div>;
-          })}
-        </div>
+      <div className="votes__players">
+        <span className="votes__head-text">Players: </span>
+        {players.map((player) => {
+          return (
+            <div className="votes__card" key="2">
+              {player}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
