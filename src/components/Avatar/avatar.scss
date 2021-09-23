@@ -1,14 +1,18 @@
 .avatar {
   position: relative;
-  min-width: 83px;
-  min-height: 83px;
+  width: 50px;
+  height: 50px;
+  // min-width: 50px;
+  // min-height: 50px;
+  // max-width: 83px;
+  // max-height: 83px;
   border-radius: 50%;
   border: 1px solid #60dabf;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 48px;
-  line-height: 56px;
+  font-size: 20px;
+  line-height: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,17 +29,17 @@
 }
 @media (max-width: 1000px) {
   .avatar {
-    width: 60px;
-    height: 60px;
-    font-size: 35px;
-    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  line-height: 12px;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 750px) {
   .avatar {
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
     line-height: 20px;
   }
 }
