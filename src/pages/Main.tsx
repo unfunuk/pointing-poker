@@ -2,39 +2,13 @@ import React, { useState } from "react";
 import Button from "../components/Button/Button";
 import { Buttons } from "../components/Button/constants";
 import Input from "../components/Input/Input";
-import PlayerCard from "../components/PlayerCard/PlayerCard";
-import Votes from "../components/Votes/Votes";
 import "./main.scss";
-
-const UserData = {
-  firstName: "string",
-  lastName: "string",
-  jobPosition: "stri,g",
-  avatarSource: "string",
-  role: "string",
-  initials: "string",
-};
-const PlayerCardProps = {
-  userData: UserData,
-  isCurrentPalyer: true,
-  shouldShowRemoveButton: true,
-};
 
 function Main(): JSX.Element {
   const [url, setUrl] = useState("");
   return (
     <div className="main">
-      {
-        <Votes
-          score={["fitrst", "second", "third"]}
-          players={[
-            PlayerCard(PlayerCardProps),
-            PlayerCard(PlayerCardProps),
-            PlayerCard(PlayerCardProps),
-          ]}
-        />
-      }
-      {/* <div className="main__title">
+      <div className="main__title">
         <span>
           <img src="cards.jpg" alt="image of the cards" />
         </span>
@@ -57,7 +31,7 @@ function Main(): JSX.Element {
           Button={<Button type={Buttons.Primary} text="Connect" />}
           onValueChange={setUrl}
         />
-      </div> */}
+      </div>
     </div>
   );
 }
