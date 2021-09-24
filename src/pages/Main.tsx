@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Button from "../components/Button/Button";
 import { Buttons } from "../components/Button/constants";
+import Chat from "../components/Chat/Chat";
 import Input from "../components/Input/Input";
+import PlayerCard from "../components/PlayerCard/PlayerCard";
 import "./main.scss";
 
 function Main(): JSX.Element {

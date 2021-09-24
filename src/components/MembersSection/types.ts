@@ -1,3 +1,4 @@
+import { UserData } from "../PlayerCard/types";
 export interface MembersSectionProps {
-  members: userData[];
+  members: UserData[];
 }

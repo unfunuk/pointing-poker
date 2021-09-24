@@ -3,7 +3,8 @@ export interface PlayerCardProps {
   isCurrentPalyer: boolean;
   shouldShowRemoveButton: boolean;
 }
-interface UserData {
+export interface UserData {
+  id: number;
   firstName: string;
   lastName: string;
   jobPosition: string;
