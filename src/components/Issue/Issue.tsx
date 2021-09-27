@@ -17,12 +17,12 @@ function Issue({
   });
   return (
     <div className={className}>
-      {isCurrent && <div className="issue__current">Current</div>}
-      <div>
-        <p className="issue__name">
+      {isCurrent && <div className="issue__currentText">Current</div>}
+      <div className="issue__information">
+        <div className="issue__name">
           {issueName ? issueName : "Create new Issue"}
-        </p>
-        <div>
+        </div>
+        <div className="issue__images">
           {!issueName ? (
             <img className="issue__image" src="plus.svg" alt="plus" />
           ) : mode === IssueModes.EditMode ? (
@@ -37,7 +37,7 @@ function Issue({
           )}
         </div>
       </div>
-      {priority && <p className="issue__priority">{priority}</p>}
+      {priority && <div className="issue__priority">{priority}</div>}
     </div>
   );
 }

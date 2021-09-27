@@ -5,6 +5,6 @@ export enum IssueModes {
 
 export enum Priorities {
   Low = "Low priority",
-  Middle = "Mddle priority",
+  Middle = "Middle priority",
   Hight = "Hight priority",
 }
