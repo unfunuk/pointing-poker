@@ -3,3 +3,6 @@ export enum Labels {
   LastName = "Your last name",
   JobPosition = "Your job position",
 }
+export enum PopUpComponents {
+  MainPage = "MainPage",
+}
