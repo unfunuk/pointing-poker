@@ -7,7 +7,7 @@ function Footer(): JSX.Element {
     <footer className="footer">
       <div className="footer__githubs">
         {GITHUBS.map(({ url, id }) => (
-          <a key={id} href={url}>
+          <a key={id} href={url} className="footer__link">
             <img
               className="footer__github_icon"
               src="github.ico"
