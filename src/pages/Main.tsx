@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import Button from "../components/Button/Button";
 import { Buttons } from "../components/Button/constants";
-import Chat from "../components/Chat/Chat";
 import Input from "../components/Input/Input";
-<<<<<<< HEAD
+import { Priorities } from "../components/Issue/constants";
+import IssueResults from "../components/IssueResults/IssueResults";
 import { PopUpComponents } from "../components/PopUp/GeneralPopUp/constants";
 import GeneralPopUp from "../components/PopUp/GeneralPopUp/GeneralPopUp";
-=======
-import PlayerCard from "../components/PlayerCard/PlayerCard";
->>>>>>> feature/build-the-chat
 import "./main.scss";
 
 function Main(): JSX.Element {
@@ -74,6 +71,18 @@ function Main(): JSX.Element {
           rightButtonText="Cancel"
         />
       </div>
+      <IssueResults
+        result={[
+          {
+            name: "fwefw",
+            priority: Priorities.Low,
+            statistics: [
+              { value: "10", content: "sp", percent: "50%" },
+              { value: "12", content: "sf", percent: "25%" },
+            ],
+          },
+        ]}
+      />
     </div>
   );
 }

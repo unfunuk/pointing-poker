@@ -1,0 +1,30 @@
+.statistics {
+  width: auto;
+  height: auto;
+  .statistics__field {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    .statistics__element {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .statistics__percent {
+        margin-top: 15px;
+        font-family: Ruda;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #000000;
+      }
+    }
+  }
+}
