@@ -26,7 +26,7 @@ function Main(): JSX.Element {
         </span>
         <span className="main__title_text main__title_poker">Poker</span>
         <p className="main__title_slash"></p>
-        <span className="main__title_text main__title_planning">Plannig</span>
+        <span className="main__title_text main__title_planning">Planning</span>
       </div>
       <div className="main__section">
         <p className="main__section_text">Start your planning:</p>
@@ -70,7 +70,6 @@ function Main(): JSX.Element {
           rightButtonText="Cancel"
         />
       </div>
-      <HeadingSection />
     </div>
   );
 }

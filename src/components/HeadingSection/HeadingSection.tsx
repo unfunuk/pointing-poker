@@ -1,18 +1,16 @@
 import React, { useState } from "react";
+import Input from "../Input/Input";
 import { HeadingModes } from "./constants";
 import "./headingSection.scss";
 
 function HeadingSection(): JSX.Element {
   const [mode, setMode] = useState<HeadingModes>(HeadingModes.DefaultMode);
   const [text, setText] = useState<string>("Heading");
-  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setText(event.target.value);
-  };
   return (
     <>
       {mode === HeadingModes.DefaultMode ? (
         <div className="heading">
-          <p>{text}</p>
+          <p className="heading__text">{text}</p>
           <img
             src="edit.svg"
             className="heading__edit"
@@ -22,11 +20,7 @@ function HeadingSection(): JSX.Element {
         </div>
       ) : (
         <div className="heading">
-          <input
-            className="heading__input"
-            type="text"
-            onChange={handleInput}
-          />
+          <Input onValueChange={setText} value={text} />
           <img
             src="edit.svg"
             className="heading__edit"
