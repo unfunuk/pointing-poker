@@ -71,18 +71,6 @@ function Main(): JSX.Element {
           rightButtonText="Cancel"
         />
       </div>
-      <IssueResults
-        result={[
-          {
-            name: "fwefw",
-            priority: Priorities.Low,
-            statistics: [
-              { value: "10", content: "sp", percent: "50%" },
-              { value: "12", content: "sf", percent: "25%" },
-            ],
-          },
-        ]}
-      />
     </div>
   );
 }
