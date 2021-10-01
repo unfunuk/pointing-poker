@@ -2,11 +2,6 @@ import React, { useState } from "react";
 import Button from "../components/Button/Button";
 import { Buttons } from "../components/Button/constants";
 import Input from "../components/Input/Input";
-<<<<<<< HEAD
-import { Priorities } from "../components/Issue/constants";
-import IssueResults from "../components/IssueResults/IssueResults";
-=======
->>>>>>> feature/add-the-header-and-footer
 import { PopUpComponents } from "../components/PopUp/GeneralPopUp/constants";
 import GeneralPopUp from "../components/PopUp/GeneralPopUp/GeneralPopUp";
 import "./main.scss";
