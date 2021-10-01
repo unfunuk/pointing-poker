@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import Button from "../components/Button/Button";
 import { Buttons } from "../components/Button/constants";
-import Chat from "../components/Chat/Chat";
 import Input from "../components/Input/Input";
-<<<<<<< HEAD
 import { PopUpComponents } from "../components/PopUp/GeneralPopUp/constants";
 import GeneralPopUp from "../components/PopUp/GeneralPopUp/GeneralPopUp";
-=======
-import PlayerCard from "../components/PlayerCard/PlayerCard";
->>>>>>> feature/build-the-chat
 import "./main.scss";
 
 function Main(): JSX.Element {
