@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../../Button/Button";
 import { Buttons } from "../../Button/constants";
 import { GeneralPopUpProps } from "./types";
@@ -6,6 +6,9 @@ import "./generalPopUp.scss";
 import { PopUpComponents } from "./constants";
 import MainPagePopUp from "../MainPagePopUp/MainPagePopUp";
 import { createPortal } from "react-dom";
+import { v4 as uuidv4 } from "uuid";
+import { useHistory } from "react-router-dom";
+import axiosInstance from "../../../api/api";
 
 function GeneralPopUp({
   popUpComponent,
@@ -14,7 +17,9 @@ function GeneralPopUp({
   onClose,
   leftButtonText,
   rightButtonText,
+  sessionId,
 }: GeneralPopUpProps): JSX.Element {
+  const history = useHistory();
   const [chooseImageButtonText, setChooseImageButtonText] =
     useState<string>("Choose file");
   const [imageSource, setImageSource] = useState<string>("");
@@ -23,14 +28,54 @@ function GeneralPopUp({
   const [jobPosition, setJobPosition] = useState<string>("");
   const [initials, setInitials] = useState<string>("");
   const [isObserver, setIsObserver] = useState<boolean>(false);
-
-  const handleSubmit = () => {
+  const [error, setError] = useState<string>("");
+  const handleSubmit = async () => {
     if (popUpComponent === PopUpComponents.MainPage) {
       if (firstName !== "") {
-        onClose();
+        const newSessionId = uuidv4();
+        const id = uuidv4();
+        if (isDealer) {
+          try {
+            await axiosInstance.post("/users", {
+              firstName,
+              lastName,
+              jobPosition,
+              initials,
+              role: "dealer",
+              avatarSource: imageSource,
+              sessionId: newSessionId,
+              id,
+            });
+            await axiosInstance.post(`/session`, { sessionId: newSessionId });
+            onClose();
+            history.push("/settings");
+          } catch (e) {
+            console.error(e);
+          }
+        } else {
+          await axiosInstance.post("/users", {
+            firstName,
+            lastName,
+            jobPosition,
+            initials,
+            role: isObserver ? "observer" : "player",
+            avatarSource: imageSource,
+            sessionId,
+            id,
+          });
+          onClose();
+          history.push(`/lobby/${sessionId}`);
+        }
+      } else {
+        setError("Enter first name");
       }
     }
   };
+  useEffect(() => {
+    if (firstName !== "") {
+      setError("");
+    }
+  }, [firstName]);
   const handleCancel = () => onClose();
 
   if (!isOpen) return <></>;
@@ -39,6 +84,7 @@ function GeneralPopUp({
       <div className="pop-up__content">
         {popUpComponent === PopUpComponents.MainPage && (
           <MainPagePopUp
+            error={error}
             imageSource={imageSource}
             setImageSource={setImageSource}
             chooseImageButtonText={chooseImageButtonText}
