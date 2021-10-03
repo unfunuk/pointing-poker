@@ -22,6 +22,7 @@ function MainPagePopUp({
   isObserver,
   setIsObserver,
   isDealer,
+  error,
 }: MainPagePopUpProps): JSX.Element {
   useEffect(() => {
     setInitials(
@@ -59,6 +60,7 @@ function MainPagePopUp({
             onValueChange={setFirstName}
             value={firstName}
           />
+          <span style={{ color: "red" }}>{error}</span>
           <Input
             label={Labels.LastName}
             onValueChange={setLastName}

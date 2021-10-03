@@ -16,7 +16,7 @@
 .main__title {
   position: relative;
   left: 22.8%;
-  width: 100%;
+  width: auto;
 }
 .main__title_slash {
   position: absolute;
@@ -32,8 +32,8 @@
   font-family: Roboto;
   font-weight: bold;
   position: absolute;
-  font-size: 70px;
-  line-height: 82px;
+  font-size: 65px;
+  line-height: 70px;
   color: #000000;
   font-style: normal;
 }

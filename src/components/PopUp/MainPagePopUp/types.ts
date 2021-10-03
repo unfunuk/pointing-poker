@@ -14,4 +14,5 @@ export type MainPagePopUpProps = {
   isObserver?: boolean;
   setIsObserver?: React.Dispatch<React.SetStateAction<boolean>>;
   isDealer: boolean;
+  error: string;
 };

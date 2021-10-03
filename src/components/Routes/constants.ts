@@ -16,12 +16,12 @@ const ROUTES: Route[] = [
     component: Settings,
   },
   {
-    path: "/game",
+    path: "/game/:sessionId",
     key: "game",
     component: Game,
   },
   {
-    path: "/lobby",
+    path: "/lobby/:sessionId",
     key: "lobby",
     component: Lobby,
   },

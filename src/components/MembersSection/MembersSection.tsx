@@ -9,9 +9,9 @@ function MembersSection({ members }: MembersSectionProps): JSX.Element {
     <div className="membersSection">
       <div className="membersSection__labelText">Members:</div>
       <div className="membersSection__users">
-        {members.map((playerCard: UserData) => (
+        {/* {members.map((playerCard: UserData) => (
           <PlayerCard key={playerCard.id} />
-        ))}
+        ))} */}
       </div>
     </div>
   );

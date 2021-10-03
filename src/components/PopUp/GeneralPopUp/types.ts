@@ -7,4 +7,5 @@ export type GeneralPopUpProps = {
   onClose: any;
   leftButtonText: string;
   rightButtonText: string;
+  sessionId?: string;
 };
