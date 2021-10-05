@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axiosInstance from "../api/api";
+import React, { useState } from "react";
 import Button from "../components/Button/Button";
 import { Buttons } from "../components/Button/constants";
 import Input from "../components/Input/Input";
@@ -8,36 +7,15 @@ import GeneralPopUp from "../components/PopUp/GeneralPopUp/GeneralPopUp";
 import "./main.scss";
 
 function Main(): JSX.Element {
-  const [url, setUrl] = useState<string>("");
-  const [sessionId, setSessionId] = useState<string>("");
+  const [url, setUrl] = useState("");
   const [isDealerPopUpOpen, setIsDealerPopUpOpen] = useState<boolean>(false);
-  const [errorText, setErrorText] = useState<string>("");
   const handleDillerClick = () => {
     setIsDealerPopUpOpen(true);
   };
   const [isNotDealerPopUpOpen, setIsNotDealerPopUpOpen] =
     useState<boolean>(false);
-  useEffect(() => {
-    setSessionId(url.slice(url.lastIndexOf("/") + 1, url.length));
-  }, [url]);
-  const handleNotDillerClick = async () => {
-    try {
-      const data: Array<{ sessionId: string }> = await (
-        await axiosInstance.get(`/session/${sessionId}`)
-      ).data;
-      if (
-        data.length !== 0 &&
-        url.startsWith(window.location.href + "session/")
-      ) {
-        setIsNotDealerPopUpOpen(true);
-      } else {
-        setErrorText(
-          `Wrong link. Should be ${window.location.href}sesion/sessionId`
-        );
-      }
-    } catch (e) {
-      console.error(e);
-    }
+  const handleNotDillerClick = () => {
+    setIsNotDealerPopUpOpen(true);
   };
   return (
     <div className="main">
@@ -47,7 +25,7 @@ function Main(): JSX.Element {
         </span>
         <span className="main__title_text main__title_poker">Poker</span>
         <p className="main__title_slash"></p>
-        <span className="main__title_text main__title_planning">Planning</span>
+        <span className="main__title_text main__title_planning">Plannig</span>
       </div>
       <div className="main__section">
         <p className="main__section_text">Start your planning:</p>
@@ -82,7 +60,6 @@ function Main(): JSX.Element {
           }
           onValueChange={setUrl}
         />
-        <span style={{ color: "red" }}>{errorText}</span>
         <GeneralPopUp
           popUpComponent={PopUpComponents.MainPage}
           isDealer={false}
@@ -90,7 +67,6 @@ function Main(): JSX.Element {
           onClose={() => setIsNotDealerPopUpOpen(false)}
           leftButtonText="Confirm"
           rightButtonText="Cancel"
-          sessionId={sessionId}
         />
       </div>
     </div>

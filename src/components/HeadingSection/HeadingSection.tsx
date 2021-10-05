@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import Input from "../Input/Input";
 import { HeadingModes } from "./constants";
 import "./headingSection.scss";
+import { HedingSectionProps } from "./types";
 
-function HeadingSection(): JSX.Element {
+function HeadingSection({ textValue }: HedingSectionProps): JSX.Element {
   const [mode, setMode] = useState<HeadingModes>(HeadingModes.DefaultMode);
   const [text, setText] = useState<string>("Heading");
   return (
     <>
-      {mode === HeadingModes.DefaultMode ? (
+      {textValue ? (
+        <p className="heading__text">{textValue}</p>
+      ) : mode === HeadingModes.DefaultMode ? (
         <div className="heading">
           <p className="heading__text">{text}</p>
           <img

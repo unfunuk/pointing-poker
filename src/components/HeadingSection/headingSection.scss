@@ -1,4 +1,5 @@
-.heading {
+.heading,
+.heading__text {
   display: flex;
   font-family: Ruda;
   font-style: normal;
@@ -18,7 +19,8 @@
 }
 
 @media (max-width: 1000px) {
-  .heading {
+  .heading,
+  .heading__text {
     font-size: 24px;
   }
   .heading__edit {
@@ -27,7 +29,8 @@
   }
 }
 @media (max-width: 500px) {
-  .heading {
+  .heading,
+  .heading__text {
     font-size: 18px;
   }
   .heading__edit {
