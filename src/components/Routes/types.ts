@@ -1,5 +1,7 @@
+import { RouteComponentProps } from "react-router-dom";
+
 export interface Route {
   key: string;
   path: string;
-  component: React.FunctionComponent;
+  component: any | React.FunctionComponent;
 }
