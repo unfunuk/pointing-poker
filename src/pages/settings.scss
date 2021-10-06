@@ -18,6 +18,13 @@
     display: flex;
     justify-content: center;
   }
+  .settings__div {
+    font-family: "Ruda", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+  }
   .buttonsSection {
     display: flex;
     width: 100%;
@@ -32,7 +39,9 @@
     .settings__text {
       width: 100%;
       text-align: center;
+      font-weight: bold;
       font-size: 24px;
+      line-height: 30px;
     }
     .issueSection__content {
       display: flex;
@@ -46,7 +55,9 @@
     .settings__text {
       width: 100%;
       text-align: center;
+      font-weight: bold;
       font-size: 24px;
+      line-height: 30px;
     }
     .settingsSection__items {
       display: flex;
