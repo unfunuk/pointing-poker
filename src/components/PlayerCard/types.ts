@@ -1,7 +1,8 @@
 export interface PlayerCardProps {
   userData: UserData;
-  isCurrentPalyer: boolean;
+  isCurrentPlayer: boolean;
   shouldShowRemoveButton: boolean;
+  onClick?: any;
 }
 export interface UserData {
   id: number;
@@ -11,4 +12,5 @@ export interface UserData {
   avatarSource: string;
   role: string;
   initials: string;
+  sessionId: string;
 }

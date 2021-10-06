@@ -9,6 +9,10 @@ import { createPortal } from "react-dom";
 import { v4 as uuidv4 } from "uuid";
 import { useHistory } from "react-router-dom";
 import axiosInstance from "../../../api/api";
+import IssuePopUp from "../IssuePopUp/IssuePopUp";
+import { Priorities } from "../../Issue/constants";
+import CardPopUp from "../CardPopUp/CardPopUp";
+import { TypeofCards } from "../../../pages/constants";
 
 function GeneralPopUp({
   popUpComponent,
@@ -18,6 +22,11 @@ function GeneralPopUp({
   leftButtonText,
   rightButtonText,
   sessionId,
+  title,
+  isCreateIssue,
+  issueId,
+  scoreType,
+  typeOfCards,
 }: GeneralPopUpProps): JSX.Element {
   const history = useHistory();
   const [chooseImageButtonText, setChooseImageButtonText] =
@@ -28,7 +37,15 @@ function GeneralPopUp({
   const [jobPosition, setJobPosition] = useState<string>("");
   const [initials, setInitials] = useState<string>("");
   const [isObserver, setIsObserver] = useState<boolean>(false);
-  const [error, setError] = useState<string>("");
+  const [firstNameError, setFirstNameError] = useState<string>("");
+  const [issueNameError, setIssueNameError] = useState<string>("");
+  const [issueName, setIssueName] = useState<string>("");
+  const [cardValue, setCardValue] = useState<string>("");
+  const [issuePriority, setIssuePriority] = useState<Priorities>(
+    Priorities.Hight
+  );
+  const [cardValueError, setCardValueError] = useState<string>("");
+
   const handleSubmit = async () => {
     if (popUpComponent === PopUpComponents.MainPage) {
       if (firstName !== "") {
@@ -46,7 +63,24 @@ function GeneralPopUp({
               sessionId: newSessionId,
               id,
             });
-            await axiosInstance.post(`/session`, { sessionId: newSessionId });
+            sessionStorage.clear();
+            sessionStorage.setItem(
+              "user",
+              JSON.stringify({
+                firstName,
+                lastName,
+                jobPosition,
+                initials,
+                role: "dealer",
+                avatarSource: imageSource,
+                sessionId: newSessionId,
+                id,
+              })
+            );
+            await axiosInstance.post(`/session`, {
+              sessionId: newSessionId,
+              isGameStarted: false,
+            });
             onClose();
             history.push("/settings");
           } catch (e) {
@@ -63,45 +97,172 @@ function GeneralPopUp({
             sessionId,
             id,
           });
+          sessionStorage.clear();
+          sessionStorage.setItem(
+            "user",
+            JSON.stringify({
+              firstName,
+              lastName,
+              jobPosition,
+              initials,
+              role: isObserver ? "observer" : "player",
+              avatarSource: imageSource,
+              sessionId,
+              id,
+            })
+          );
           onClose();
           history.push(`/lobby/${sessionId}`);
         }
-      } else {
-        setError("Enter first name");
+      }
+      setChooseImageButtonText("Choose File");
+      setImageSource("");
+    }
+    if (popUpComponent === PopUpComponents.Issue && isCreateIssue) {
+      if (issueName !== "") {
+        const id = uuidv4();
+        try {
+          await axiosInstance.post("/issues", {
+            priority: issuePriority,
+            title: issueName,
+            sessionId,
+            id,
+          });
+          onClose();
+        } catch (e) {
+          console.error(e);
+        }
+      }
+    }
+    if (popUpComponent === PopUpComponents.Issue && !isCreateIssue) {
+      try {
+        await axiosInstance.put(`/issues/id/${issueId}`, {
+          priority: issuePriority,
+          title: issueName,
+        });
+        onClose();
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    if (popUpComponent === PopUpComponents.Card && cardValueError === "") {
+      const id = uuidv4();
+      try {
+        await axiosInstance.post(`/cards`, {
+          value: cardValue,
+          id,
+          sessionId,
+          content: imageSource === "" ? scoreType : imageSource,
+        });
+        onClose();
+      } catch (e) {
+        console.error(e);
       }
     }
   };
   useEffect(() => {
     if (firstName !== "") {
-      setError("");
+      setFirstNameError("");
+    } else {
+      setFirstNameError("Enter first name");
     }
   }, [firstName]);
-  const handleCancel = () => onClose();
+  useEffect(() => {
+    if (issueName !== "") {
+      setIssueNameError("");
+    } else {
+      setIssueNameError("Enter issue title");
+    }
+  }, [issueName]);
+  function isSquare(num: number) {
+    return num > 0 && Math.sqrt(num) % 1 === 0;
+  }
+  function isFibonacci(num: number) {
+    if (isSquare(5 * (num * num) - 4) || isSquare(5 * (num * num) + 4)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  function isPowerOfTwo(x: number) {
+    return (Math.log(x) / Math.log(2)) % 1 === 0;
+  }
+  useEffect(() => {
+    if (typeOfCards === TypeofCards.FibonacciNumbers) {
+      if (cardValue !== "" && isFibonacci(Number(cardValue))) {
+        setCardValueError("");
+      } else {
+        setCardValueError(`Enter ${typeOfCards}`);
+      }
+    } else {
+      if (cardValue !== "" && isPowerOfTwo(Number(cardValue))) {
+        setCardValueError("");
+      } else {
+        setCardValueError(`Enter ${typeOfCards}`);
+      }
+    }
+  }, [cardValue, typeOfCards]);
+
+  const handleCancel = () => {
+    onClose();
+    setChooseImageButtonText("Choose file");
+    setFirstName("");
+    setImageSource("");
+    setIssueName("");
+  };
 
   if (!isOpen) return <></>;
   return createPortal(
     <div className="pop-up">
       <div className="pop-up__content">
-        {popUpComponent === PopUpComponents.MainPage && (
-          <MainPagePopUp
-            error={error}
-            imageSource={imageSource}
-            setImageSource={setImageSource}
-            chooseImageButtonText={chooseImageButtonText}
-            setChooseImageButtonText={setChooseImageButtonText}
-            firstName={firstName}
-            setFirstName={setFirstName}
-            lastName={lastName}
-            setLastName={setLastName}
-            jobPosition={jobPosition}
-            setJobPosition={setJobPosition}
-            initials={initials}
-            setInitials={setInitials}
-            isObserver={isObserver}
-            setIsObserver={setIsObserver}
-            isDealer={isDealer}
+        {popUpComponent === PopUpComponents.MainPage &&
+          isDealer !== undefined && (
+            <MainPagePopUp
+              title={title}
+              error={firstNameError}
+              imageSource={imageSource}
+              setImageSource={setImageSource}
+              chooseImageButtonText={chooseImageButtonText}
+              setChooseImageButtonText={setChooseImageButtonText}
+              firstName={firstName}
+              setFirstName={setFirstName}
+              lastName={lastName}
+              setLastName={setLastName}
+              jobPosition={jobPosition}
+              setJobPosition={setJobPosition}
+              initials={initials}
+              setInitials={setInitials}
+              isObserver={isObserver}
+              setIsObserver={setIsObserver}
+              isDealer={isDealer}
+            />
+          )}
+        {popUpComponent === PopUpComponents.Issue && (
+          <IssuePopUp
+            title={title}
+            issueName={issueName}
+            setIssueName={setIssueName}
+            issuePriority={issuePriority}
+            setIssuePriority={setIssuePriority}
+            error={issueNameError}
           />
         )}
+        {popUpComponent === PopUpComponents.Card &&
+          scoreType &&
+          typeOfCards && (
+            <CardPopUp
+              title={title}
+              imageSource={imageSource}
+              setImageSource={setImageSource}
+              chooseImageButtonText={chooseImageButtonText}
+              setChooseImageButtonText={setChooseImageButtonText}
+              cardValue={cardValue}
+              setCardValue={setCardValue}
+              scoreType={scoreType}
+              typeOfCards={typeOfCards}
+              cardValueError={cardValueError}
+            />
+          )}
         <div className="pop-up__buttons">
           <Button
             type={Buttons.Primary}

@@ -8,20 +8,26 @@ function SettingsTimer(): JSX.Element {
     (onChange: React.Dispatch<React.SetStateAction<string>>) =>
     ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
       const isValidTimerValue = Number(value) >= 0 && Number(value) < 60;
-
+      if (Number(value) > 0 && Number(value) < 10) {
+        value = "0" + Number(value);
+      } else {
+        if (value.startsWith("0")) {
+          value = Number(value).toString();
+        }
+      }
       if (isValidTimerValue) {
         onChange(value);
       }
     };
 
   const handleMinutesBlur = () => {
-    if (minutes === "") {
+    if (Number(minutes) === 0) {
       setMinutes(DEFAULT_TIMER_VALUE);
     }
   };
 
   const handleSecondsBlur = () => {
-    if (seconds === "") {
+    if (Number(seconds) === 0) {
       setSeconds(DEFAULT_TIMER_VALUE);
     }
   };

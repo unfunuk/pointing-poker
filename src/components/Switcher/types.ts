@@ -1,4 +1,5 @@
 export interface SwitcherProps {
   label: string;
-  onIsObserverChange?: React.Dispatch<React.SetStateAction<boolean>>;
+  onChange: React.Dispatch<React.SetStateAction<boolean>>;
+  id: string;
 }

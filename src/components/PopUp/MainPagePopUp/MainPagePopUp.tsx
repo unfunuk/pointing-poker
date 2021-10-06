@@ -23,6 +23,7 @@ function MainPagePopUp({
   setIsObserver,
   isDealer,
   error,
+  title,
 }: MainPagePopUpProps): JSX.Element {
   useEffect(() => {
     setInitials(
@@ -45,11 +46,12 @@ function MainPagePopUp({
   return (
     <>
       <div className="pop-up__header">
-        <span className="pop-up__title">Connect to lobby</span>
+        <span className="pop-up__title">{title}</span>
         {!isDealer && (
           <Switcher
             label="Connect as Observer"
-            onIsObserverChange={setIsObserver}
+            onChange={setIsObserver}
+            id="observer"
           />
         )}
       </div>

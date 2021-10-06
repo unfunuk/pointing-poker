@@ -5,7 +5,7 @@ import "./headingSection.scss";
 
 function HeadingSection(): JSX.Element {
   const [mode, setMode] = useState<HeadingModes>(HeadingModes.DefaultMode);
-  const [text, setText] = useState<string>("Heading");
+  const [text, setText] = useState<string>("Heading section");
   return (
     <>
       {mode === HeadingModes.DefaultMode ? (

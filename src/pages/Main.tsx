@@ -7,9 +7,8 @@ import { PopUpComponents } from "../components/PopUp/GeneralPopUp/constants";
 import GeneralPopUp from "../components/PopUp/GeneralPopUp/GeneralPopUp";
 import "./main.scss";
 
-function Main(): JSX.Element {
-  const [url, setUrl] = useState<string>("");
-  const [sessionId, setSessionId] = useState<string>("");
+function Main(location: any): JSX.Element {
+  const [id, setId] = useState<string>("");
   const [isDealerPopUpOpen, setIsDealerPopUpOpen] = useState<boolean>(false);
   const [errorText, setErrorText] = useState<string>("");
   const handleDillerClick = () => {
@@ -18,22 +17,19 @@ function Main(): JSX.Element {
   const [isNotDealerPopUpOpen, setIsNotDealerPopUpOpen] =
     useState<boolean>(false);
   useEffect(() => {
-    setSessionId(url.slice(url.lastIndexOf("/") + 1, url.length));
-  }, [url]);
+    if (location.match.params.sessionId !== undefined) {
+      setId(location.match.params.sessionId);
+    }
+  }, []);
   const handleNotDillerClick = async () => {
     try {
       const data: Array<{ sessionId: string }> = await (
-        await axiosInstance.get(`/session/${sessionId}`)
+        await axiosInstance.get(`/session/${id}`)
       ).data;
-      if (
-        data.length !== 0 &&
-        url.startsWith(window.location.href + "session/")
-      ) {
+      if (data.length !== 0) {
         setIsNotDealerPopUpOpen(true);
       } else {
-        setErrorText(
-          `Wrong link. Should be ${window.location.href}sesion/sessionId`
-        );
+        setErrorText(`Wrong id`);
       }
     } catch (e) {
       console.error(e);
@@ -60,6 +56,7 @@ function Main(): JSX.Element {
           />
           <GeneralPopUp
             popUpComponent={PopUpComponents.MainPage}
+            title="Connect to lobby"
             isDealer={true}
             isOpen={isDealerPopUpOpen}
             onClose={() => setIsDealerPopUpOpen(false)}
@@ -72,7 +69,7 @@ function Main(): JSX.Element {
         <p className="main__section_text">OR:</p>
         <Input
           label="Connect to lobby by URL:"
-          value={url}
+          value={id}
           Button={
             <Button
               type={Buttons.Primary}
@@ -80,17 +77,18 @@ function Main(): JSX.Element {
               onClick={handleNotDillerClick}
             />
           }
-          onValueChange={setUrl}
+          onValueChange={setId}
         />
         <span style={{ color: "red" }}>{errorText}</span>
         <GeneralPopUp
           popUpComponent={PopUpComponents.MainPage}
           isDealer={false}
+          title="Connect to lobby"
           isOpen={isNotDealerPopUpOpen}
           onClose={() => setIsNotDealerPopUpOpen(false)}
           leftButtonText="Confirm"
           rightButtonText="Cancel"
-          sessionId={sessionId}
+          sessionId={id}
         />
       </div>
     </div>

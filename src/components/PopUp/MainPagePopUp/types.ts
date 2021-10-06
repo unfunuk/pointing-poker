@@ -11,8 +11,9 @@ export type MainPagePopUpProps = {
   setJobPosition: React.Dispatch<React.SetStateAction<string>>;
   initials: string;
   setInitials: React.Dispatch<React.SetStateAction<string>>;
-  isObserver?: boolean;
-  setIsObserver?: React.Dispatch<React.SetStateAction<boolean>>;
+  isObserver: boolean;
+  setIsObserver: React.Dispatch<React.SetStateAction<boolean>>;
   isDealer: boolean;
   error: string;
+  title: string;
 };

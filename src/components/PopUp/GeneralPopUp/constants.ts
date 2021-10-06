@@ -5,4 +5,6 @@ export enum Labels {
 }
 export enum PopUpComponents {
   MainPage = "MainPage",
+  Issue = "Issue",
+  Card = "Card",
 }

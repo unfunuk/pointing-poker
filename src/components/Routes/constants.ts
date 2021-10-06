@@ -25,5 +25,10 @@ const ROUTES: Route[] = [
     key: "lobby",
     component: Lobby,
   },
+  {
+    path: "/:sessionId",
+    key: "pre-filled main",
+    component: Main,
+  },
 ];
 export default ROUTES;

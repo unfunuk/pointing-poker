@@ -1,11 +1,10 @@
-import { Priorities } from "../Issue/constants";
+import { IssueData } from "../Issue/types";
 
 export interface IssueResultsProps {
   result: IssueResult[];
 }
 export interface IssueResult {
-  name: string;
-  priority: Priorities;
+  issueData: IssueData;
   statistics: Array<IssueStatistics>;
 }
 interface IssueStatistics {
