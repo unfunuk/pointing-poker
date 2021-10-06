@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axiosInstance from "../api/api";
 import Button from "../components/Button/Button";
 import { Buttons } from "../components/Button/constants";
 import Input from "../components/Input/Input";
@@ -8,6 +9,7 @@ import "./main.scss";
 
 function Main(location: any): JSX.Element {
   const [id, setId] = useState<string>("");
+  const [errorText, setErrorText] = useState<string>("");
   const [isDealerPopUpOpen, setIsDealerPopUpOpen] = useState<boolean>(false);
   const handleDillerClick = () => {
     setIsDealerPopUpOpen(true);
@@ -77,6 +79,7 @@ function Main(location: any): JSX.Element {
           }
           onValueChange={setId}
         />
+        <p>{errorText}</p>
         <GeneralPopUp
           popUpComponent={PopUpComponents.MainPage}
           isDealer={false}
