@@ -7,6 +7,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  font-family: "Ruda", sans-serif;
 }
 .footer__githubs {
   display: flex;
@@ -15,6 +16,7 @@
   gap: 20px;
 }
 .footer__githubs_name {
+  font-family: "Ruda", sans-serif;
   font-size: 10px;
   color: rgb(204, 202, 197);
 }
@@ -33,10 +35,12 @@
 }
 .footer__rsshool_year {
   font-size: 12px;
+  font-family: "Ruda", sans-serif;
   color: rgb(204, 202, 197);
 }
 .footer__github_id {
   color: white;
+  font-family: "Ruda", sans-serif;
 }
 
 @media (max-width: 1000px) {
