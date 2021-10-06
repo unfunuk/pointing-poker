@@ -13,35 +13,35 @@
   font-family: Ruda;
   font-style: normal;
   font-weight: bold;
-  font-size: 50px;
-  line-height: 61px;
+  font-size: 25px;
+  line-height: 25px;
   display: flex;
   align-items: center;
   color: #000000;
   position: absolute;
   left: 9.11%;
-  bottom: 60%;
+  bottom: 70%;
 }
 .card__bottom {
   font-family: Ruda;
   font-style: normal;
   font-weight: bold;
-  font-size: 64px;
-  line-height: 81px;
+  font-size: 25px;
+  line-height: 25px;
   display: flex;
   align-items: center;
   color: #000000;
   transform: rotate(179.72deg);
   position: absolute;
-  left: 67%;
-  top: 60%;
+  left: 80%;
+  top: 70%;
 }
 .card__content {
   font-family: Ruda;
   font-style: normal;
   font-weight: bold;
-  font-size: 124px;
-  line-height: 152px;
+  font-size: 60px;
+  line-height: 60px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -73,16 +73,16 @@
     height: 180px;
   }
   .card__top {
-    font-size: 44px;
-    line-height: 51px;
+    font-size: 20px;
+    line-height: 20px;
   }
   .card__bottom {
-    font-size: 44px;
-    line-height: 51px;
+    font-size: 20px;
+    line-height: 20px;
   }
   .card__content {
-    font-size: 94px;
-    line-height: 102px;
+    font-size: 45px;
+    line-height: 45px;
   }
 }
 
@@ -94,15 +94,15 @@
     height: 140px;
   }
   .card__top {
-    font-size: 24px;
-    line-height: 25px;
+    font-size: 18px;
+    line-height: 18px;
   }
   .card__bottom {
-    font-size: 24px;
-    line-height: 25px;
+    font-size: 18px;
+    line-height: 18px;
   }
   .card__content {
-    font-size: 50px;
-    line-height: 80px;
+    font-size: 40px;
+    line-height: 40px;
   }
 }

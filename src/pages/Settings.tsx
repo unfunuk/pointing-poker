@@ -114,7 +114,7 @@ function Settings(): JSX.Element {
         <HeadingSection />
       </div>
       <>
-        <p>Scram master:</p>
+        <p className="settings__text">Scram master:</p>
         <PlayerCard
           isCurrentPlayer={true}
           shouldShowRemoveButton={false}
@@ -148,7 +148,7 @@ function Settings(): JSX.Element {
         )}
       </div>
       <div className="issueSection">
-        <p>Issues:</p>
+        <p className="settings__text">Issues:</p>
         <div className="issueSection__content">
           {issues.map((issue) => (
             <Issue
@@ -190,7 +190,7 @@ function Settings(): JSX.Element {
         </div>
       </div>
       <div className="settingsSection">
-        <p>Game settings:</p>
+        <p className="settings__text">Game settings:</p>
         <div className="settingsSection__items">
           <Switcher
             id="isDealerPlayer"
