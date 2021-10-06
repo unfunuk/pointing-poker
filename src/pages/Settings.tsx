@@ -216,18 +216,18 @@ function Settings(): JSX.Element {
             onSelectValue={setAdmitMechanism}
           />
           <Input
-            label="Score type(short)"
+            label="Score type (short)"
             value={scoreTypeShort}
             onValueChange={setScoreTypeShort}
           />
           {isTimer && (
             <>
-              <span>Round Time:</span>
+              <span className="settings__span">Round Time:</span>
               <Timer mode={Mode.Settings} />
             </>
           )}
           <div className="cardsSection">
-            <span>Add card values:</span>
+            <span className="settings__span">Add card values:</span>
             <div className="cardsSection__items">
               {cards.map(({ id, sessionId, value, content }: CardData) => (
                 <Card key={id} content={content} value={value} />

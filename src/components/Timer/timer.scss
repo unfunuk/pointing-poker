@@ -42,3 +42,47 @@
     }
   }
 }
+
+@media (max-width: 1000px) {
+  .timer {
+    width: 100px;
+    height: 60px;
+    font-size: 30px;
+    .minutes__label,
+    .seconds__label {
+      font-size: 10px;
+      line-height: 12px;
+      .minutes__input,
+      .seconds__input,
+      .minutes,
+      .seconds {
+        width: 90%;
+        height: 75%;
+        font-size: 40px;
+        line-height: 70px;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .timer {
+    width: 90px;
+    height: 55px;
+    font-size: 25px;
+    .minutes__label,
+    .seconds__label {
+      font-size: 10px;
+      line-height: 12px;
+      .minutes__input,
+      .seconds__input,
+      .minutes,
+      .seconds {
+        width: 90%;
+        height: 75%;
+        font-size: 35px;
+        line-height: 60px;
+      }
+    }
+  }
+}
