@@ -1,3 +1,4 @@
+import { title } from "process";
 import React from "react";
 import Card from "../Card/Card";
 import { IssueModes } from "../Issue/constants";
@@ -8,14 +9,13 @@ import { IssueResult, IssueResultsProps } from "./types";
 function IssueResults({ result }: IssueResultsProps): JSX.Element {
   return (
     <div className="statistics">
-      {result.map(({ name, priority, statistics }: IssueResult) => (
+      {result.map(({ issueData, statistics }: IssueResult) => (
         <>
           <Issue
             mode={IssueModes.GameMode}
             isDealer={false}
             isCurrent={false}
-            priority={priority}
-            issueName={name}
+            issueData={issueData}
           />
           <div className="statistics__field">
             {statistics.map((card) => (

@@ -6,7 +6,7 @@ import { HedingSectionProps } from "./types";
 
 function HeadingSection({ textValue }: HedingSectionProps): JSX.Element {
   const [mode, setMode] = useState<HeadingModes>(HeadingModes.DefaultMode);
-  const [text, setText] = useState<string>("Heading");
+  const [text, setText] = useState<string>("Heading section");
   return (
     <>
       {textValue ? (

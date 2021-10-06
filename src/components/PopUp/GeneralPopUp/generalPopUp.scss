@@ -17,8 +17,36 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding-top: 2%;
+    .form__label {
+      .form__paragraph {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 25px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 3px;
+      }
+      .form__input {
+        display: none;
+      }
+      .input__file {
+        width: 276px;
+        height: 47px;
+        background: #ffffff;
+        border: 1px solid #eeeeee;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 0px 0px 0px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+    }
     .pop-up__buttons {
       width: 100%;
       padding: 2% 4%;
@@ -29,19 +57,69 @@
     }
   }
 }
+.pop-up__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  .pop-up__title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 55px;
+    text-align: center;
+  }
+}
 @media (max-width: 1000px) {
   .pop-up {
     .pop-up__content {
       padding-top: 1%;
+      .form__label {
+        .form__paragraph {
+          font-size: 16px;
+          line-height: 18px;
+          margin-bottom: 2px;
+        }
+        .input__file {
+          max-width: 176px;
+          max-height: 40px;
+        }
+      }
+    }
+  }
+  .pop-up__header {
+    .pop-up__title {
+      font-size: 30px;
+      line-height: 40px;
     }
   }
 }
 @media (max-width: 500px) {
   .pop-up {
     .pop-up__content {
+      .form__label {
+        .form__paragraph {
+          font-size: 12px;
+          line-height: 14px;
+          margin-bottom: 1px;
+        }
+        .input__file {
+          max-width: 106px;
+          max-height: 25px;
+        }
+      }
       .pop-up__buttons {
         padding: 2% 3%;
       }
+    }
+  }
+  .pop-up__header {
+    .pop-up__title {
+      font-size: 25px;
+      line-height: 20px;
     }
   }
 }

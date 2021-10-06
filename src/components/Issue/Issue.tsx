@@ -6,10 +6,12 @@ import { IssueProps } from "./types";
 
 function Issue({
   mode,
-  issueName,
   isDealer,
   isCurrent,
-  priority,
+  onAddClick,
+  onDeleteClick,
+  onEditClick,
+  issueData,
 }: IssueProps): JSX.Element {
   const className = classNames("issue", {
     issue_current: isCurrent === true,
@@ -20,15 +22,32 @@ function Issue({
       {isCurrent && <div className="issue__currentText">Current</div>}
       <div className="issue__information">
         <div className="issue__name">
-          {issueName ? issueName : "Create new Issue"}
+          {issueData && issueData.title ? issueData.title : "Create new Issue"}
         </div>
         <div className="issue__images">
-          {!issueName ? (
-            <img className="issue__image" src="plus.svg" alt="plus" />
-          ) : mode === IssueModes.EditMode ? (
+          {!issueData ? (
+            <img
+              className="issue__image"
+              src="plus.svg"
+              alt="plus"
+              onClick={onAddClick}
+            />
+          ) : mode === IssueModes.EditMode && issueData ? (
             <>
-              <img className="issue__image" src="edit.svg" alt="edit" />
-              <img className="issue__image" src="delete.svg" alt="delete" />
+              <img
+                className="issue__image"
+                src="edit.svg"
+                alt="edit"
+                onClick={onEditClick}
+                id={issueData.id}
+              />
+              <img
+                className="issue__image"
+                src="delete.svg"
+                alt="delete"
+                onClick={onDeleteClick}
+                id={issueData.id}
+              />
             </>
           ) : (
             isDealer && (
@@ -37,7 +56,9 @@ function Issue({
           )}
         </div>
       </div>
-      {priority && <div className="issue__priority">{priority}</div>}
+      {issueData && issueData.priority && (
+        <div className="issue__priority">{issueData.priority}</div>
+      )}
     </div>
   );
 }

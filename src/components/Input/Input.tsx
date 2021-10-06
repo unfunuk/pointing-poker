@@ -8,21 +8,25 @@ function Input({
   label,
   onValueChange,
   value,
+  readOnly,
 }: InputProps): JSX.Element {
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onValueChange(event.target.value);
+    if (onValueChange) {
+      onValueChange(event.target.value);
+    }
   };
 
   return (
     <div className="input">
       <label>
-        {label ? <p className="input__description">{label}</p> : null}
+        {label ? <span className="input__description">{label}</span> : null}
         <input
           className="input__field"
           type="text"
           name="input"
           value={value}
           onChange={handleInput}
+          readOnly={readOnly}
         />
       </label>
       {Button ? Button : null}

@@ -2,8 +2,16 @@ import { IssueModes, Priorities } from "./constants";
 
 export interface IssueProps {
   mode: IssueModes;
-  issueName?: string;
   isDealer?: boolean;
   isCurrent: boolean;
-  priority?: Priorities;
+  onAddClick?: any;
+  onEditClick?: any;
+  onDeleteClick?: any;
+  issueData?: IssueData;
+}
+export interface IssueData {
+  title: string;
+  priority: Priorities;
+  sessionId: string;
+  id: string;
 }

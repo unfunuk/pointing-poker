@@ -19,8 +19,9 @@ function Chat({ arrayOfMessages }: ChatProps): JSX.Element {
                 initials: user.initials,
                 jobPosition: user.jobPosition,
                 avatarSource: user.avatarSource,
+                sessionId: user.sessionId,
               }}
-              isCurrentPalyer={false}
+              isCurrentPlayer={false}
               shouldShowRemoveButton={false}
             />
           </div>

@@ -6,16 +6,32 @@ import { PopUpComponents } from "../components/PopUp/GeneralPopUp/constants";
 import GeneralPopUp from "../components/PopUp/GeneralPopUp/GeneralPopUp";
 import "./main.scss";
 
-function Main(): JSX.Element {
-  const [url, setUrl] = useState("");
+function Main(location: any): JSX.Element {
+  const [id, setId] = useState<string>("");
   const [isDealerPopUpOpen, setIsDealerPopUpOpen] = useState<boolean>(false);
   const handleDillerClick = () => {
     setIsDealerPopUpOpen(true);
   };
   const [isNotDealerPopUpOpen, setIsNotDealerPopUpOpen] =
     useState<boolean>(false);
-  const handleNotDillerClick = () => {
-    setIsNotDealerPopUpOpen(true);
+  useEffect(() => {
+    if (location.match.params.sessionId !== undefined) {
+      setId(location.match.params.sessionId);
+    }
+  }, []);
+  const handleNotDillerClick = async () => {
+    try {
+      const data: Array<{ sessionId: string }> = await (
+        await axiosInstance.get(`/session/${id}`)
+      ).data;
+      if (data.length !== 0) {
+        setIsNotDealerPopUpOpen(true);
+      } else {
+        setErrorText(`Wrong id`);
+      }
+    } catch (e) {
+      console.error(e);
+    }
   };
   return (
     <div className="main">
@@ -38,6 +54,7 @@ function Main(): JSX.Element {
           />
           <GeneralPopUp
             popUpComponent={PopUpComponents.MainPage}
+            title="Connect to lobby"
             isDealer={true}
             isOpen={isDealerPopUpOpen}
             onClose={() => setIsDealerPopUpOpen(false)}
@@ -50,7 +67,7 @@ function Main(): JSX.Element {
         <p className="main__section_text">OR:</p>
         <Input
           label="Connect to lobby by URL:"
-          value={url}
+          value={id}
           Button={
             <Button
               type={Buttons.Primary}
@@ -58,15 +75,17 @@ function Main(): JSX.Element {
               onClick={handleNotDillerClick}
             />
           }
-          onValueChange={setUrl}
+          onValueChange={setId}
         />
         <GeneralPopUp
           popUpComponent={PopUpComponents.MainPage}
           isDealer={false}
+          title="Connect to lobby"
           isOpen={isNotDealerPopUpOpen}
           onClose={() => setIsNotDealerPopUpOpen(false)}
           leftButtonText="Confirm"
           rightButtonText="Cancel"
+          sessionId={id}
         />
       </div>
     </div>

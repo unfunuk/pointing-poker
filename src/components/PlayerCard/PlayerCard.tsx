@@ -4,9 +4,10 @@ import "./playerCard.scss";
 import { PlayerCardProps } from "./types";
 
 function PlayerCard({
-  userData: { firstName, lastName, jobPosition, avatarSource, initials },
-  isCurrentPalyer,
+  userData: { firstName, lastName, jobPosition, avatarSource, initials, id },
+  isCurrentPlayer,
   shouldShowRemoveButton,
+  onClick,
 }: PlayerCardProps): JSX.Element {
   return (
     <div className="playerCard">
@@ -16,7 +17,7 @@ function PlayerCard({
         <Avatar initials={initials} />
       )}
       <div className="playerCard__info">
-        {isCurrentPalyer && (
+        {isCurrentPlayer && (
           <div className="playerCard__aboutYou">It`s you</div>
         )}
         <div className="playerCard__name">{`${firstName} ${lastName}`}</div>
@@ -27,6 +28,8 @@ function PlayerCard({
           className="playerCard__removeImage"
           alt="Remove card icon"
           src="removeCardIcon.png"
+          id={String(id)}
+          onClick={onClick}
         />
       )}
     </div>
