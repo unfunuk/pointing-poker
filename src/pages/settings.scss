@@ -1,0 +1,113 @@
+.settings {
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 20px;
+  padding-bottom: 100px;
+  padding-left: 26px;
+  padding-right: 26px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  max-width: 69.4%;
+  overflow: hidden;
+  gap: 10px;
+  font-family: "Ruda", sans-serif;
+  margin: 0 auto;
+  .headingSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .settings__div {
+    font-family: "Ruda", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .buttonsSection {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .membersSection {
+    width: 100%;
+    justify-content: center;
+  }
+  .issueSection {
+    width: 100%;
+    .settings__text {
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 30px;
+    }
+    .issueSection__content {
+      display: flex;
+      justify-content: flex-start;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+  }
+  .settingsSection {
+    width: 100%;
+    .settings__text {
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 30px;
+    }
+    .settingsSection__items {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      flex-direction: column;
+      .settings__span {
+        font-family: "Ruda", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+  }
+  .cardsSection {
+    width: 100%;
+    .cardsSection__items {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: start;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .settings {
+    .settingsSection {
+      .settingsSection__items {
+        .settings__span {
+          font-size: 18px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .settings {
+    .settingsSection {
+      .settingsSection__items {
+        .settings__span {
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.pop-up__main {
+  width: 100%;
+  padding-left: 5%;
+  min-height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 100px;
+  .pop-up__form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 15%;
+    font-family: "Ruda", sans-serif;
+  }
+}

@@ -1,0 +1,41 @@
+.heading,
+.heading__text {
+  display: flex;
+  font-family: Ruda;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+}
+
+.heading__edit {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .heading,
+  .heading__text {
+    font-size: 24px;
+    font-family: "Ruda", sans-serif;
+  }
+  .heading__edit {
+    width: 16px;
+    height: 16px;
+  }
+}
+@media (max-width: 500px) {
+  .heading,
+  .heading__text {
+    font-size: 18px;
+  }
+  .heading__edit {
+    width: 14px;
+    height: 14px;
+  }
+}

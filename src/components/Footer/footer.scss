@@ -1,0 +1,88 @@
+.footer {
+  width: 100vw;
+  height: 70px;
+  left: 0;
+  bottom: 0;
+  background-color: #2b3a67;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-family: "Ruda", sans-serif;
+}
+.footer__githubs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.footer__githubs_name {
+  font-family: "Ruda", sans-serif;
+  font-size: 10px;
+  color: rgb(204, 202, 197);
+}
+.footer__github_icon {
+  cursor: pointer;
+}
+.footer__rsshool_icon {
+  width: 56px;
+  height: 56px;
+}
+.footer__link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.footer__rsshool_year {
+  font-size: 12px;
+  font-family: "Ruda", sans-serif;
+  color: rgb(204, 202, 197);
+}
+.footer__github_id {
+  color: white;
+  font-family: "Ruda", sans-serif;
+}
+
+@media (max-width: 1000px) {
+  .footer {
+    height: 50px;
+  }
+  .footer__github_icon {
+    width: 45px;
+    height: 45px;
+  }
+  .footer__rsshool_icon {
+    width: 32px;
+    height: 32px;
+  }
+  .footer__rsshool_year {
+    font-size: 15px;
+  }
+  .footer__githubs {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer {
+    height: 30px;
+  }
+  .footer__github_icon {
+    width: 24px;
+    height: 24px;
+  }
+  .footer__githubs_name {
+    font-size: 8px;
+    color: rgb(204, 202, 197);
+  }
+  .footer__rsshool_icon {
+    width: 24px;
+    height: 24px;
+  }
+  .footer__rsshool_year {
+    font-size: 8px;
+  }
+  .footer__githubs {
+    gap: 5px;
+  }
+}
