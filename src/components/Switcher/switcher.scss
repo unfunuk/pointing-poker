@@ -14,7 +14,11 @@
     color: #000000;
     .switcher__labelText {
       text-align: center;
+      font-family: "Ruda", sans-serif;
       padding-right: 20px;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 30px;
     }
     .switcher__input {
       display: none;
@@ -55,6 +59,10 @@
     min-width: 132px;
     .switcher__label {
       font-size: 20px;
+      .switcher__labelText {
+        font-size: 18px;
+        line-height: 24px;
+      }
       .switcher__button {
         min-width: 55px;
         height: 30px;
@@ -70,6 +78,10 @@
   .switcher {
     .switcher__label {
       font-size: 18px;
+      .switcher__labelText {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
   }
 }

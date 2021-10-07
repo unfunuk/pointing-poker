@@ -80,6 +80,7 @@ function GeneralPopUp({
             await axiosInstance.post(`/session`, {
               sessionId: newSessionId,
               isGameStarted: false,
+              headingText: "Heading",
             });
             onClose();
             history.push("/settings");

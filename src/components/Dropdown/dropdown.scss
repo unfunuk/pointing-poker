@@ -1,5 +1,33 @@
-.select{
-    width: 267px;
-    height: 45px;
-    font-weight: bold;
+.select {
+  width: 267px;
+  height: 45px;
+  font-weight: bold;
+  font-family: "Ruda", sans-serif;
+  font-size: 18px;
+  .select__option {
+    font-family: "Ruda", sans-serif;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .select {
+    width: 220px;
+    height: 40px;
+    font-size: 16px;
+    .select__option {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .select {
+    width: 180px;
+    height: 35px;
+    font-size: 12px;
+    .select__option {
+      font-size: 12px;
+    }
+  }
 }

@@ -113,14 +113,14 @@ function Settings(): JSX.Element {
       <div className="headingSection">
         <HeadingSection />
       </div>
-      <>
+      <div className="settings__div">
         <p className="settings__text">Scram master:</p>
         <PlayerCard
           isCurrentPlayer={true}
           shouldShowRemoveButton={false}
           userData={dealer}
         />
-      </>
+      </div>
       <>
         <Input
           label="Link to lobby:"
@@ -203,31 +203,31 @@ function Settings(): JSX.Element {
             onChange={setIsChangingCards}
           />
           <Switcher label="Is timer needed:" onChange={setIsTimer} id="timer" />
-          <span>Choose set of cards:</span>
+          <span className="settings__span">Choose set of cards:</span>
           <Dropdown
             options={[TypeofCards.FibonacciNumbers, TypeofCards.PowerOdNumber2]}
             selectValue={typeOfCards}
             onSelectValue={setTypeOfCards}
           />
-          <span>Admit mechanism:</span>
+          <span className="settings__span">Admit mechanism:</span>
           <Dropdown
             options={[AdmitMechanism.AdmitReject, AdmitMechanism.AutoAdmit]}
             selectValue={admitMechanism}
             onSelectValue={setAdmitMechanism}
           />
           <Input
-            label="Score type(short)"
+            label="Score type (short)"
             value={scoreTypeShort}
             onValueChange={setScoreTypeShort}
           />
           {isTimer && (
             <>
-              <span>Round Time:</span>
+              <span className="settings__span">Round Time:</span>
               <Timer mode={Mode.Settings} />
             </>
           )}
           <div className="cardsSection">
-            <span>Add card values:</span>
+            <span className="settings__span">Add card values:</span>
             <div className="cardsSection__items">
               {cards.map(({ id, sessionId, value, content }: CardData) => (
                 <Card key={id} content={content} value={value} />

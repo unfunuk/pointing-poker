@@ -26,6 +26,7 @@
   box-sizing: border-box;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 0px 10px;
+  font-family: Roboto;
 }
 
 @media (max-width: 1000px) {
@@ -37,6 +38,7 @@
   .input__field {
     max-width: 176px;
     max-height: 40px;
+    font-size: 18px;
   }
 }
 @media (max-width: 500px) {
@@ -48,5 +50,6 @@
   .input__field {
     max-width: 106px;
     max-height: 25px;
+    font-size: 16px;
   }
 }

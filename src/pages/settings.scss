@@ -12,10 +12,18 @@
   max-width: 69.4%;
   overflow: hidden;
   gap: 10px;
+  font-family: "Ruda", sans-serif;
   .headingSection {
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+  .settings__div {
+    font-family: "Ruda", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
   }
   .buttonsSection {
     display: flex;
@@ -31,7 +39,9 @@
     .settings__text {
       width: 100%;
       text-align: center;
+      font-weight: bold;
       font-size: 24px;
+      line-height: 30px;
     }
     .issueSection__content {
       display: flex;
@@ -45,13 +55,22 @@
     .settings__text {
       width: 100%;
       text-align: center;
+      font-weight: bold;
       font-size: 24px;
+      line-height: 30px;
     }
     .settingsSection__items {
       display: flex;
       align-items: flex-start;
       gap: 15px;
       flex-direction: column;
+      .settings__span {
+        font-family: "Ruda", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 28px;
+      }
     }
   }
   .cardsSection {
@@ -62,6 +81,32 @@
       gap: 15px;
       flex-wrap: wrap;
       justify-content: start;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .settings {
+    .settingsSection {
+      .settingsSection__items {
+        .settings__span {
+          font-size: 18px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .settings {
+    .settingsSection {
+      .settingsSection__items {
+        .settings__span {
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
     }
   }
 }
