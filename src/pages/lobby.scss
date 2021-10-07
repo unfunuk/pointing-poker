@@ -1,0 +1,32 @@
+.lobby {
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 20px;
+  padding-bottom: 100px;
+  padding-left: 26px;
+  padding-right: 26px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  max-width: 69.4%;
+  overflow: hidden;
+  gap: 10px;
+  margin: 0 auto;
+  .lobby__heading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .lobby__text {
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "Ruda", sans-serif;
+  }
+  .lobby__button_exit {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}

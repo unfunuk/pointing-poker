@@ -52,6 +52,13 @@
   top: 0%;
   bottom: 0%;
 }
+.card__delete {
+  position: absolute;
+  left: 80%;
+  bottom: 82%;
+  width: 25px;
+  height: 25px;
+}
 .card__content_img {
   position: absolute;
   align-items: center;
@@ -84,6 +91,12 @@
     font-size: 45px;
     line-height: 45px;
   }
+  .card__delete {
+    position: absolute;
+    left: 80%;
+    width: 18px;
+    height: 18px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -104,5 +117,13 @@
   .card__content {
     font-size: 40px;
     line-height: 40px;
+  }
+  .card__delete {
+    position: absolute;
+    left: 80%;
+    bottom: 80%;
+    width: 14px;
+    height: 14px;
+    bottom: 85%;
   }
 }

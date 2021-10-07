@@ -10,9 +10,9 @@ function Input({
   value,
   readOnly,
 }: InputProps): JSX.Element {
-  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInput = async (event: React.ChangeEvent<HTMLInputElement>) => {
     if (onValueChange) {
-      onValueChange(event.target.value);
+      await onValueChange(event.target.value);
     }
   };
 

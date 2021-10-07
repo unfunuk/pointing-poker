@@ -35,6 +35,7 @@ function Settings(): JSX.Element {
   const [cards, setCards] = useState<CardData[]>([]);
   const [issues, setIssues] = useState<IssueData[]>([]);
   const [issueId, setIssueId] = useState<string>("");
+  const [headingText, setHeadingText] = useState<string>("Heading");
   const [scoreTypeShort, setScoreTypeShort] = useState<string>("SP");
   const [isDealerPlayer, setIsDealerPlayer] = useState<boolean>(false);
   const [isChangingCards, setIsChangingCards] = useState<boolean>(false);
@@ -84,13 +85,23 @@ function Settings(): JSX.Element {
       `http://${window.location.host}/${dealer.sessionId}`
     );
   };
+  const handleHeadingInput = async (value: string) => {
+    setHeadingText(value);
+    await axiosInstance.put(`/session/${dealer.sessionId}`, {
+      headingText: value,
+    });
+  };
   const handleStartGameClick = async () => {
-    await axiosInstance.put(`/session/${dealer.sessionId}`);
+    await axiosInstance.put(`/session/${dealer.sessionId}`, {
+      isGameStarted: true,
+    });
     history.replace(`/game/${dealer.sessionId}`);
   };
   const handleCancelGameClick = async () => {
     await axiosInstance.delete(`/session/${dealer.sessionId}`);
     await axiosInstance.delete(`/users/session/${dealer.sessionId}`);
+    await axiosInstance.delete(`/issues/session/${dealer.sessionId}`);
+    await axiosInstance.delete(`/cards/session/${dealer.sessionId}`);
     history.replace("/");
   };
   const handleAddIssueClick = () => {
@@ -100,6 +111,9 @@ function Settings(): JSX.Element {
     await axiosInstance.delete(
       `/issues/id/${(event.target as HTMLElement).id}`
     );
+  };
+  const handleDeleteCardClick = async (event: React.MouseEvent) => {
+    await axiosInstance.delete(`/cards/id/${(event.target as HTMLElement).id}`);
   };
   const handleEditIssueClick = async (event: React.MouseEvent) => {
     setIssueId((event.target as HTMLElement).id);
@@ -111,7 +125,7 @@ function Settings(): JSX.Element {
   return (
     <div className="settings">
       <div className="headingSection">
-        <HeadingSection />
+        <HeadingSection text={headingText} setText={handleHeadingInput} />
       </div>
       <div className="settings__div">
         <p className="settings__text">Scram master:</p>
@@ -230,7 +244,13 @@ function Settings(): JSX.Element {
             <span className="settings__span">Add card values:</span>
             <div className="cardsSection__items">
               {cards.map(({ id, sessionId, value, content }: CardData) => (
-                <Card key={id} content={content} value={value} />
+                <Card
+                  key={id}
+                  content={content}
+                  value={value}
+                  onDeleteCardClick={handleDeleteCardClick}
+                  id={id}
+                />
               ))}
               <Card
                 content="addCard.png"

@@ -8,6 +8,7 @@ function MembersSection({
   members,
   onClick,
 }: MembersSectionProps): JSX.Element {
+  const user: UserData = JSON.parse(sessionStorage.getItem("user") as string);
   return (
     <div className="membersSection">
       <div className="membersSection__labelText">Members:</div>
@@ -15,7 +16,7 @@ function MembersSection({
         {members.map((playerCard: UserData) => (
           <PlayerCard
             key={playerCard.id}
-            isCurrentPlayer={false}
+            isCurrentPlayer={user.id === playerCard.id}
             shouldShowRemoveButton={true}
             userData={playerCard}
             onClick={onClick}
