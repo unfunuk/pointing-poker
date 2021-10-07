@@ -45,6 +45,13 @@ function GeneralPopUp({
     Priorities.Hight
   );
   const [cardValueError, setCardValueError] = useState<string>("");
+  const handleCancel = () => {
+    onClose();
+    setChooseImageButtonText("Choose file");
+    setFirstName("");
+    setImageSource("");
+    setIssueName("");
+  };
 
   const handleSubmit = async () => {
     if (popUpComponent === PopUpComponents.MainPage) {
@@ -80,8 +87,9 @@ function GeneralPopUp({
             await axiosInstance.post(`/session`, {
               sessionId: newSessionId,
               isGameStarted: false,
+              headingText: "Heading",
             });
-            onClose();
+            handleCancel();
             history.push("/settings");
           } catch (e) {
             console.error(e);
@@ -111,7 +119,7 @@ function GeneralPopUp({
               id,
             })
           );
-          onClose();
+          handleCancel();
           history.push(`/lobby/${sessionId}`);
         }
       }
@@ -128,7 +136,7 @@ function GeneralPopUp({
             sessionId,
             id,
           });
-          onClose();
+          handleCancel();
         } catch (e) {
           console.error(e);
         }
@@ -140,7 +148,7 @@ function GeneralPopUp({
           priority: issuePriority,
           title: issueName,
         });
-        onClose();
+        handleCancel();
       } catch (e) {
         console.error(e);
       }
@@ -154,7 +162,7 @@ function GeneralPopUp({
           sessionId,
           content: imageSource === "" ? scoreType : imageSource,
         });
-        onClose();
+        handleCancel();
       } catch (e) {
         console.error(e);
       }
@@ -202,14 +210,6 @@ function GeneralPopUp({
       }
     }
   }, [cardValue, typeOfCards]);
-
-  const handleCancel = () => {
-    onClose();
-    setChooseImageButtonText("Choose file");
-    setFirstName("");
-    setImageSource("");
-    setIssueName("");
-  };
 
   if (!isOpen) return <></>;
   return createPortal(

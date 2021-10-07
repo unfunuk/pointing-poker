@@ -6,3 +6,8 @@ export enum AdmitMechanism {
   AutoAdmit = "Auto admit",
   AdmitReject = "Admit/Reject mechanism",
 }
+export interface Session {
+  sessionId: string;
+  headingText: string;
+  isGameStarted: boolean;
+}

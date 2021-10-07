@@ -4,32 +4,39 @@ import { HeadingModes } from "./constants";
 import "./headingSection.scss";
 import { HedingSectionProps } from "./types";
 
-function HeadingSection({ textValue }: HedingSectionProps): JSX.Element {
+function HeadingSection({
+  textValue,
+  text,
+  setText,
+}: HedingSectionProps): JSX.Element {
   const [mode, setMode] = useState<HeadingModes>(HeadingModes.DefaultMode);
-  const [text, setText] = useState<string>("Heading section");
   return (
     <>
       {textValue ? (
         <p className="heading__text">{textValue}</p>
       ) : mode === HeadingModes.DefaultMode ? (
         <div className="heading">
-          <p className="heading__text">{text}</p>
-          <img
-            src="edit.svg"
-            className="heading__edit"
-            alt="edit"
-            onClick={() => setMode(HeadingModes.EditMode)}
-          />
+          {text && <p className="heading__text">{text}</p>}
+          {text && (
+            <img
+              src="edit.svg"
+              className="heading__edit"
+              alt="edit"
+              onClick={() => setMode(HeadingModes.EditMode)}
+            />
+          )}
         </div>
       ) : (
         <div className="heading">
-          <Input onValueChange={setText} value={text} />
-          <img
-            src="edit.svg"
-            className="heading__edit"
-            alt="edit"
-            onClick={() => setMode(HeadingModes.DefaultMode)}
-          />
+          {text && <Input onValueChange={setText} value={text} />}
+          {text && (
+            <img
+              src="edit.svg"
+              className="heading__edit"
+              alt="edit"
+              onClick={() => setMode(HeadingModes.DefaultMode)}
+            />
+          )}
         </div>
       )}
     </>

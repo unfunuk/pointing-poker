@@ -10,7 +10,7 @@ function Footer(): JSX.Element {
           <a key={id} href={url} className="footer__link">
             <img
               className="footer__github_icon"
-              src="github.ico"
+              src={`${window.location.origin}/github.ico`}
               alt="Github icon"
             />
             <span className="footer__github_id">{id}</span>
@@ -21,7 +21,7 @@ function Footer(): JSX.Element {
         <a href="https://rs.school/react/">
           <img
             className="footer__rsshool_icon"
-            src="rsschool.svg"
+            src={`${window.location.origin}/rsschool.svg`}
             alt="Rolling Scopes school icon"
           />
         </a>

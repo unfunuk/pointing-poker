@@ -27,7 +27,7 @@ function PlayerCard({
         <img
           className="playerCard__removeImage"
           alt="Remove card icon"
-          src="removeCardIcon.png"
+          src={`${window.location.origin}/removeCardIcon.png`}
           id={String(id)}
           onClick={onClick}
         />
